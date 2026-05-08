@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaylee Gassen — Program &amp; Project Manager</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --black:  #0a0a0a;
+  --off:    #111111;
+  --dark:   #1a1a1a;
+  --mid:    #2e2e2e;
+  --gray:   #6a6a6a;
+  --silver: #b0b0b0;
+  --fog:    #f0ede8;
+  --white:  #fafaf8;
+  --gold:   #b8963e;
+  --gold-l: #d4af5a;
+  --gold-d: #8a6e28;
+}
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--white);
+  color: var(--black);
+  overflow-x: hidden;
+  cursor: none;
+}
+.cursor {
+  position: fixed; width: 8px; height: 8px;
+  background: var(--gold); border-radius: 50%;
+  pointer-events: none; z-index: 9999;
+  transition: transform 0.15s ease;
+  transform: translate(-50%, -50%);
+}
+.cursor-ring {
+  position: fixed; width: 32px; height: 32px;
+  border: 1px solid var(--gold); border-radius: 50%;
+  pointer-events: none; z-index: 9998;
+  transition: transform 0.35s ease, width 0.3s, height 0.3s, opacity 0.3s;
+  transform: translate(-50%, -50%); opacity: 0.5;
+}
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.6rem 4rem;
+  background: rgba(250,250,248,0.93);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(184,150,62,0.18);
+}
+.nav-logo {
+  font-family: 'Playfair Display', serif; font-size: 1.05rem;
+  font-weight: 400; color: var(--black); letter-spacing: 0.02em;
+  text-decoration: none;
+}
+.nav-right { display: flex; align-items: center; gap: 3rem; }
+.nav-links { display: flex; gap: 2.8rem; list-style: none; }
+.nav-links a {
+  font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gray); text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-cta {
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--black); text-decoration: none;
+  padding: 0.6rem 1.4rem; border: 1px solid var(--black);
+  transition: all 0.25s;
+}
+.nav-cta:hover { background: var(--black); color: var(--gold); }
+
+/* HERO */
+.hero {
+  min-height: 100vh; background: var(--black);
+  display: grid; grid-template-rows: 1fr auto;
+  position: relative; overflow: hidden; padding-top: 5rem;
+}
+.hero-bg-text {
+  position: absolute; bottom: -4rem; left: -2rem;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(12rem, 22vw, 22rem); font-weight: 700;
+  color: transparent; -webkit-text-stroke: 1px rgba(184,150,62,0.07);
+  line-height: 1; pointer-events: none; user-select: none; white-space: nowrap;
+}
+.hero-main {
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center; padding: 6rem 5rem 4rem; position: relative; z-index: 2;
+}
+.hero-tag {
+  display: inline-block; font-size: 0.65rem; font-weight: 600;
+  letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold);
+  border: 1px solid rgba(184,150,62,0.4); padding: 0.4rem 1rem;
+  margin-bottom: 2.5rem; opacity: 0; animation: fadeIn 0.9s 0.2s forwards;
+}
+.hero-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(4rem, 7vw, 7rem); font-weight: 400;
+  color: var(--white); line-height: 1.0; margin-bottom: 2rem;
+  opacity: 0; animation: fadeIn 0.9s 0.4s forwards;
+}
+.hero-name em { font-style: italic; color: var(--gold); }
+.hero-desc {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.05rem; line-height: 1.85;
+  color: rgba(250,250,248,0.52); font-style: italic;
+  max-width: 420px; margin-bottom: 3rem;
+  opacity: 0; animation: fadeIn 0.9s 0.6s forwards;
+}
+.hero-actions {
+  display: flex; align-items: center; gap: 2rem;
+  opacity: 0; animation: fadeIn 0.9s 0.8s forwards;
+}
+.btn-gold {
+  display: inline-block; padding: 1rem 2.4rem; background: var(--gold);
+  color: var(--black); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none;
+  transition: background 0.25s, transform 0.25s;
+}
+.btn-gold:hover { background: var(--gold-l); transform: translateY(-2px); }
+.btn-text {
+  font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(250,250,248,0.38); text-decoration: none;
+  border-bottom: 1px solid transparent; transition: color 0.2s, border-color 0.2s;
+  padding-bottom: 2px;
+}
+.btn-text:hover { color: var(--gold); border-color: var(--gold); }
+.hero-right {
+  display: flex; flex-direction: column; align-items: flex-end; gap: 1.5rem;
+  opacity: 0; animation: fadeIn 0.9s 0.7s forwards;
+}
+.stat-block {
+  text-align: right; padding: 2rem 2.5rem;
+  border: 1px solid rgba(184,150,62,0.14);
+  position: relative; width: 100%; max-width: 320px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.stat-block:hover { border-color: rgba(184,150,62,0.48); transform: translateX(-4px); }
+.stat-block::after {
+  content: ''; position: absolute; right: 0; top: 20%; bottom: 20%;
+  width: 2px; background: var(--gold); opacity: 0.45;
+}
+.stat-num {
+  font-family: 'Playfair Display', serif; font-size: 3.2rem;
+  font-weight: 700; color: var(--white); line-height: 1; margin-bottom: 0.4rem;
+}
+.stat-label {
+  font-size: 0.68rem; font-weight: 400; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(250,250,248,0.32); line-height: 1.5;
+}
+.hero-bar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.5rem 5rem; border-top: 1px solid rgba(184,150,62,0.1);
+  position: relative; z-index: 2;
+  opacity: 0; animation: fadeIn 1s 1.1s forwards;
+}
+.cert-list { display: flex; gap: 2.5rem; list-style: none; }
+.cert-list li {
+  font-size: 0.65rem; font-weight: 500; letter-spacing: 0.15em;
+  text-transform: uppercase; color: rgba(250,250,248,0.28);
+}
+.cert-list li span { color: var(--gold); margin-right: 0.6rem; }
+.scroll-hint {
+  font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(250,250,248,0.18); display: flex; align-items: center; gap: 0.8rem;
+}
+.scroll-line { width: 40px; height: 1px; background: rgba(184,150,62,0.28); }
+
+/* SECTIONS */
+section { position: relative; }
+.section-inner { max-width: 1200px; margin: 0 auto; padding: 7rem 4rem; }
+.eyebrow {
+  font-size: 0.62rem; font-weight: 600; letter-spacing: 0.26em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; display: block;
+}
+.heading-xl {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 4.5vw, 4rem); font-weight: 400;
+  line-height: 1.1; color: var(--black); margin-bottom: 1.2rem;
+}
+.heading-xl em { font-style: italic; color: var(--gold); }
+.lead {
+  font-family: 'Libre Baskerville', serif; font-size: 1rem;
+  line-height: 1.85; color: var(--gray); font-style: italic;
+  max-width: 560px; margin-bottom: 4rem;
+}
+
+/* SKILLS */
+#skills { background: var(--fog); border-top: 1px solid rgba(0,0,0,0.06); }
+.comp-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: rgba(0,0,0,0.08);
+}
+.comp-card {
+  background: var(--white); padding: 2.8rem 2.4rem;
+  position: relative; transition: background 0.25s; overflow: hidden;
+}
+.comp-card:hover { background: var(--fog); }
+.comp-card::before {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 100%; height: 2px; background: var(--gold);
+  transform: scaleX(0); transform-origin: left; transition: transform 0.35s ease;
+}
+.comp-card:hover::before { transform: scaleX(1); }
+.comp-num {
+  font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700;
+  color: rgba(184,150,62,0.1); line-height: 1; margin-bottom: 1.2rem;
+}
+.comp-title {
+  font-family: 'Playfair Display', serif; font-size: 1.15rem;
+  font-weight: 700; color: var(--black); margin-bottom: 0.8rem; line-height: 1.25;
+}
+.comp-body { font-size: 0.82rem; line-height: 1.75; color: var(--gray); }
+.comp-keywords { margin-top: 1.4rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.kw {
+  font-size: 0.62rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--gold-d);
+  background: rgba(184,150,62,0.08); padding: 0.28rem 0.7rem;
+}
+
+/* PROJECTS */
+#projects { background: var(--white); }
+.project-entry {
+  border: 1px solid rgba(0,0,0,0.08); overflow: hidden;
+  transition: box-shadow 0.35s;
+}
+.project-entry:hover { box-shadow: 0 24px 80px rgba(0,0,0,0.08); }
+.project-entry + .project-entry { margin-top: 3rem; }
+.project-header {
+  display: grid; grid-template-columns: 340px 1fr; min-height: 280px;
+}
+.project-label-col {
+  background: var(--black); padding: 3.5rem 3rem;
+  display: flex; flex-direction: column; justify-content: space-between;
+  position: relative; overflow: hidden;
+}
+.project-watermark {
+  position: absolute; bottom: -2rem; right: -1rem;
+  font-family: 'Playfair Display', serif; font-size: 9rem; font-weight: 700;
+  color: rgba(184,150,62,0.06); line-height: 1; pointer-events: none;
+}
+.proj-num {
+  font-size: 0.62rem; font-weight: 600; letter-spacing: 0.24em;
+  text-transform: uppercase; color: var(--gold);
+}
+.proj-title {
+  font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400;
+  color: var(--white); line-height: 1.25; margin-top: 1rem;
+}
+.proj-org {
+  font-size: 0.68rem; font-weight: 400; letter-spacing: 0.1em;
+  color: rgba(250,250,248,0.28); text-transform: uppercase; margin-top: 1.5rem;
+}
+.proj-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; padding-top: 1.5rem; }
+.proj-tag {
+  font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(184,150,62,0.78);
+  border: 1px solid rgba(184,150,62,0.24); padding: 0.3rem 0.7rem;
+}
+.project-summary-col {
+  padding: 3.5rem 4rem; display: flex; flex-direction: column;
+  justify-content: center; background: var(--white);
+}
+.project-summary-col p {
+  font-family: 'Libre Baskerville', serif; font-size: 1rem;
+  line-height: 1.9; color: var(--gray); font-style: italic;
+}
+.project-summary-col strong { color: var(--black); font-style: normal; }
+.project-body {
+  border-top: 1px solid rgba(0,0,0,0.06);
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+}
+.phase-block {
+  padding: 3rem 2.8rem;
+  border-right: 1px solid rgba(0,0,0,0.06); position: relative;
+}
+.phase-block:last-child { border-right: none; }
+.phase-num {
+  font-family: 'Playfair Display', serif; font-size: 0.72rem; font-weight: 700;
+  color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.6rem;
+}
+.phase-heading {
+  font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700;
+  color: var(--black); margin-bottom: 1rem; line-height: 1.3;
+}
+.phase-text { font-size: 0.82rem; line-height: 1.8; color: var(--gray); }
+.phase-text strong { color: var(--black); font-weight: 600; }
+.metrics-bar {
+  background: var(--black); display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(184,150,62,0.14);
+}
+.metric {
+  padding: 2rem 2.4rem; border-right: 1px solid rgba(184,150,62,0.09);
+  text-align: center; transition: background 0.25s;
+}
+.metric:last-child { border-right: none; }
+.metric:hover { background: rgba(184,150,62,0.06); }
+.metric-val {
+  font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 700;
+  color: var(--gold); line-height: 1; margin-bottom: 0.5rem;
+}
+.metric-label {
+  font-size: 0.64rem; font-weight: 500; letter-spacing: 0.12em;
+  text-transform: uppercase; color: rgba(250,250,248,0.33); line-height: 1.5;
+}
+
+/* BRIDGE */
+#bridge { background: var(--black); }
+#bridge .heading-xl { color: var(--white); }
+#bridge .lead { color: rgba(250,250,248,0.38); }
+.bridge-table { width: 100%; border-collapse: collapse; }
+.bridge-table thead tr { border-bottom: 1px solid rgba(184,150,62,0.28); }
+.bridge-table thead th {
+  font-size: 0.62rem; font-weight: 600; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--gold); padding: 0 0 1rem; text-align: left;
+}
+.bridge-table thead th:first-child { width: 30%; }
+.bridge-table thead th:nth-child(2) { width: 5%; }
+.bridge-table thead th:last-child { width: 65%; }
+.bridge-table tbody tr {
+  border-bottom: 1px solid rgba(255,255,255,0.04); transition: background 0.2s;
+}
+.bridge-table tbody tr:hover { background: rgba(184,150,62,0.04); }
+.bridge-table tbody td { padding: 1.6rem 0; vertical-align: top; }
+.bridge-context {
+  font-family: 'Playfair Display', serif; font-size: 1rem;
+  font-weight: 700; color: rgba(250,250,248,0.68); padding-right: 2rem;
+}
+.bridge-arrow-cell { color: var(--gold); font-size: 1.1rem; padding-right: 2rem; opacity: 0.65; }
+.bridge-corporate { font-size: 0.84rem; line-height: 1.75; color: rgba(250,250,248,0.38); }
+.bridge-corporate strong { color: rgba(250,250,248,0.72); font-weight: 500; }
+
+/* CONTACT */
+#contact { background: var(--fog); border-top: 1px solid rgba(0,0,0,0.06); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+.contact-item {
+  padding: 1.6rem 0; border-bottom: 1px solid rgba(0,0,0,0.08);
+  display: flex; flex-direction: column; gap: 0.3rem;
+}
+.contact-item:first-child { border-top: 1px solid rgba(0,0,0,0.08); }
+.c-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+.c-val { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--black); }
+.c-val a { color: var(--black); text-decoration: none; border-bottom: 1px solid rgba(0,0,0,0.14); transition: color 0.2s, border-color 0.2s; padding-bottom: 1px; }
+.c-val a:hover { color: var(--gold); border-color: var(--gold); }
+.status-panel { background: var(--black); padding: 3.5rem; }
+.status-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+.status-heading { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 400; color: var(--white); line-height: 1.2; margin-bottom: 1.4rem; }
+.status-heading em { font-style: italic; color: var(--gold); }
+.status-body { font-size: 0.84rem; line-height: 1.8; color: rgba(250,250,248,0.38); margin-bottom: 2rem; }
+.status-targets { display: flex; flex-direction: column; gap: 0.6rem; }
+.target-row { display: flex; align-items: center; gap: 0.9rem; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em; color: rgba(250,250,248,0.5); }
+.target-dot { width: 6px; height: 6px; background: var(--gold); flex-shrink: 0; }
+
+/* FOOTER */
+footer { background: var(--black); border-top: 1px solid rgba(184,150,62,0.1); padding: 2rem 4rem; display: flex; align-items: center; justify-content: space-between; }
+.footer-mark { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: rgba(250,250,248,0.22); }
+.footer-right { font-size: 0.62rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(250,250,248,0.18); }
+
+/* ANIMATIONS */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.75s cubic-bezier(0.16,1,0.3,1), transform 0.75s cubic-bezier(0.16,1,0.3,1); }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  nav { padding: 1.2rem 2rem; }
+  .nav-links { display: none; }
+  .hero-main { grid-template-columns: 1fr; padding: 4rem 2rem 2rem; }
+  .hero-right { align-items: flex-start; }
+  .hero-bar { padding: 1.5rem 2rem; flex-wrap: wrap; gap: 1rem; }
+  .cert-list { flex-wrap: wrap; gap: 1rem; }
+  .section-inner { padding: 5rem 2rem; }
+  .comp-grid { grid-template-columns: 1fr; }
+  .project-header { grid-template-columns: 1fr; }
+  .project-body { grid-template-columns: 1fr; }
+  .phase-block { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .metrics-bar { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 2rem; }
+  body { cursor: auto; }
+  .cursor, .cursor-ring { display: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="#" class="nav-logo">Kaylee Gassen</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Work</a></li>
+      <li><a href="#bridge">Industry Fit</a></li>
+    </ul>
+    <a href="mailto:kayleegassen@gmail.com" class="nav-cta">Get in Touch</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg-text" aria-hidden="true">KG</div>
+  <div class="hero-main">
+    <div class="hero-left">
+      <span class="hero-tag">Program &amp; Project Manager</span>
+      <h1 class="hero-name">Kaylee<br><em>Gassen</em></h1>
+      <p class="hero-desc">Five years building programs from nothing, leading teams through complexity, and delivering results in environments where the margin for error is zero.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-gold">View the Work</a>
+        <a href="#contact" class="btn-text">Open to Opportunities</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="stat-block">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Years of end-to-end program leadership</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">2</div>
+        <div class="stat-label">Programs built from the ground up</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">3x</div>
+        <div class="stat-label">Certified in project management and process improvement</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-bar">
+    <ul class="cert-list">
+      <li><span>01</span>Six Sigma Black Belt</li>
+      <li><span>02</span>Certified Lean Specialist</li>
+      <li><span>03</span>Project Schedule: Monitor &amp; Control Specialist</li>
+      <li><span>04</span>NCTRC Certified</li>
+    </ul>
+    <div class="scroll-hint"><div class="scroll-line"></div>Scroll to explore</div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-inner">
+    <span class="eyebrow reveal">Core Competencies</span>
+    <h2 class="heading-xl reveal">What every project<br><em>gets from me</em></h2>
+    <p class="lead reveal">Built in regulated, high-stakes environments. Directly applicable to any organization that values structure, accountability, and delivery.</p>
+    <div class="comp-grid reveal">
+      <div class="comp-card">
+        <div class="comp-num">01</div>
+        <h3 class="comp-title">Project Planning and Scheduling</h3>
+        <p class="comp-body">Full lifecycle ownership from scoping and work breakdown through milestone tracking, dependency management, risk identification, and post-implementation review.</p>
+        <div class="comp-keywords"><span class="kw">Scheduling</span><span class="kw">Milestone Tracking</span><span class="kw">Risk Mitigation</span><span class="kw">Scope Management</span></div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-num">02</div>
+        <h3 class="comp-title">Process Optimization</h3>
+        <p class="comp-body">Six Sigma Black Belt and Certified Lean Specialist. Systematic elimination of waste, reduction of variation, and data-driven continuous improvement at the program level.</p>
+        <div class="comp-keywords"><span class="kw">Six Sigma Black Belt</span><span class="kw">Lean</span><span class="kw">DMAIC</span><span class="kw">Continuous Improvement</span></div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-num">03</div>
+        <h3 class="comp-title">Cross-functional Team Leadership</h3>
+        <p class="comp-body">Coordinated teams spanning operations, administration, and specialist functions simultaneously. Trained and supervised teams of up to 10 direct and indirect reports.</p>
+        <div class="comp-keywords"><span class="kw">Team Leadership</span><span class="kw">Stakeholder Alignment</span><span class="kw">Executive Reporting</span></div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-num">04</div>
+        <h3 class="comp-title">Reporting and Analytics</h3>
+        <p class="comp-body">Designed KPI dashboards and performance reporting workflows using enterprise platforms and Google Workspace, delivering actionable data insights to leadership on a recurring basis.</p>
+        <div class="comp-keywords"><span class="kw">KPI Development</span><span class="kw">Excel</span><span class="kw">Google Workspace</span><span class="kw">Data Reporting</span></div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-num">05</div>
+        <h3 class="comp-title">Compliance and Risk Management</h3>
+        <p class="comp-body">Deep experience managing compliance documentation in regulated environments. Zero compliance findings across all roles. Proficient in regulatory frameworks, accreditation standards, and audit readiness.</p>
+        <div class="comp-keywords"><span class="kw">Regulatory Compliance</span><span class="kw">Audit Readiness</span><span class="kw">Risk Identification</span></div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-num">06</div>
+        <h3 class="comp-title">Program Design and Launch</h3>
+        <p class="comp-body">Designed and launched programs from concept through full operation, including scoping, curriculum development, budget oversight, staff training, and post-launch evaluation cycles.</p>
+        <div class="comp-keywords"><span class="kw">Program Management</span><span class="kw">Budget Oversight</span><span class="kw">Change Management</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-inner">
+    <span class="eyebrow reveal">Case Studies</span>
+    <h2 class="heading-xl reveal">The work,<br><em>in detail</em></h2>
+    <p class="lead reveal">Two programs built from scratch in complex, regulated environments. Each one a full cycle of ownership from problem identification through measurable outcomes.</p>
+
+    <div class="project-entry reveal">
+      <div class="project-header">
+        <div class="project-label-col">
+          <div class="project-watermark" aria-hidden="true">01</div>
+          <div>
+            <p class="proj-num">Project 01</p>
+            <h3 class="proj-title">Integrative Recovery Program Design and Launch</h3>
+            <p class="proj-org">Denver Children's Home &amp; Mountain Springs Recovery &nbsp; 2022 to Present</p>
+          </div>
+          <div class="proj-tags">
+            <span class="proj-tag">Program Design</span>
+            <span class="proj-tag">Six Sigma</span>
+            <span class="proj-tag">Cross-functional Leadership</span>
+            <span class="proj-tag">KPI Development</span>
+            <span class="proj-tag">Budget Management</span>
+            <span class="proj-tag">Change Management</span>
+          </div>
+        </div>
+        <div class="project-summary-col">
+          <p>There was no structured program. No defined curriculum, no performance metrics, no documentation framework, and no process for staff training or quality review. Services were inconsistent and outcomes were invisible to leadership. The mandate was to fix that from the ground up — and the result was a fully operational, evidence-based program serving <strong>30 to 40 clients</strong> with measurable outcomes tracked from day one.</p>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="phase-block">
+          <p class="phase-num">The Problem</p>
+          <h4 class="phase-heading">No infrastructure. No baseline. No playbook.</h4>
+          <p class="phase-text">The organization lacked a standardized service delivery program. There was no defined scope, no scheduling framework, no performance visibility, and no structured onboarding process for the staff responsible for delivering services to clients in a high-stakes environment.</p>
+        </div>
+        <div class="phase-block">
+          <p class="phase-num">My Approach</p>
+          <h4 class="phase-heading">End-to-end build using Six Sigma methodology.</h4>
+          <p class="phase-text">Scoped the program, defined deliverables, and built a scheduling and documentation framework from zero. Applied <strong>Six Sigma and evidence-based frameworks</strong> to design standardized curricula. Coordinated teams across clinical, operations, and administrative departments, managing dependencies and delivery risk throughout. Built <strong>KPI dashboards</strong> for leadership reporting. Trained and supervised <strong>5 to 10 staff members</strong> with regular performance review cycles.</p>
+        </div>
+        <div class="phase-block">
+          <p class="phase-num">The Outcome</p>
+          <h4 class="phase-heading">Measurable growth in admissions, retention, and compliance.</h4>
+          <p class="phase-text">Program implementation drove a <strong>15% increase in admissions</strong> and extended average client engagement by <strong>one full month</strong>, enabling significantly better treatment outcomes. Continuous improvement feedback loops improved year-over-year participation and satisfaction. Zero compliance findings throughout the program's operation.</p>
+        </div>
+      </div>
+      <div class="metrics-bar">
+        <div class="metric"><div class="metric-val">30-40</div><div class="metric-label">Clients served</div></div>
+        <div class="metric"><div class="metric-val">+15%</div><div class="metric-label">Increase in admissions</div></div>
+        <div class="metric"><div class="metric-val">+30 days</div><div class="metric-label">Avg. client retention increase</div></div>
+        <div class="metric"><div class="metric-val">0</div><div class="metric-label">Compliance findings</div></div>
+      </div>
+    </div>
+
+    <div class="project-entry reveal">
+      <div class="project-header">
+        <div class="project-label-col">
+          <div class="project-watermark" aria-hidden="true">02</div>
+          <div>
+            <p class="proj-num">Project 02</p>
+            <h3 class="proj-title">Virtual Program Launch and COVID-19 Services Manual</h3>
+            <p class="proj-org">Long-Term Care Setting &nbsp; 2020 to 2021</p>
+          </div>
+          <div class="proj-tags">
+            <span class="proj-tag">Crisis Response</span>
+            <span class="proj-tag">Remote Program Design</span>
+            <span class="proj-tag">Technical Writing</span>
+            <span class="proj-tag">Stakeholder Communication</span>
+            <span class="proj-tag">Inclusive Design</span>
+            <span class="proj-tag">Collaborative Delivery</span>
+          </div>
+        </div>
+        <div class="project-summary-col">
+          <p>When COVID-19 forced full nursing home lockdowns, <strong>20 residents</strong> faced complete social isolation with no virtual programming infrastructure and no adaptive protocols for remote delivery. Working with a two-person team, a fully virtual program was designed, launched, and documented under crisis conditions. The result was a <strong>20% improvement in reported overall wellbeing</strong> and a reusable manual distributed to staff and families alike.</p>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="phase-block">
+          <p class="phase-num">The Problem</p>
+          <h4 class="phase-heading">Pandemic isolation with zero remote infrastructure.</h4>
+          <p class="phase-text">A sudden total lockdown left residents with no programming, no family connection, and no structure for their days. There was no existing playbook for virtual delivery in a long-term care setting and no resources for families trying to support engagement from outside the facility.</p>
+        </div>
+        <div class="phase-block">
+          <p class="phase-num">My Approach</p>
+          <h4 class="phase-heading">Designed a virtual program and co-authored a standardized manual.</h4>
+          <p class="phase-text">Collaborated with a <strong>two-person team</strong> to design and launch a virtual programming model, applying evidence-based practices adapted across diverse cognitive and physical ability levels. Co-developed the <em>COVID-19 Recreation Services Manual</em>, a standardized reference document distributed to staff and resident families. Applied iterative, data-driven improvements throughout to increase participation and inclusivity.</p>
+        </div>
+        <div class="phase-block">
+          <p class="phase-num">The Outcome</p>
+          <h4 class="phase-heading">20% wellbeing improvement. A reusable, scalable playbook.</h4>
+          <p class="phase-text">Measured a <strong>20% improvement in participants' reported overall wellbeing</strong> during mandatory isolation. The standardized manual became a reusable resource beyond the original scope, distributable to any long-term care facility navigating similar circumstances — extending the project's value well past its original timeline.</p>
+        </div>
+      </div>
+      <div class="metrics-bar">
+        <div class="metric"><div class="metric-val">20</div><div class="metric-label">Residents served</div></div>
+        <div class="metric"><div class="metric-val">+20%</div><div class="metric-label">Reported wellbeing improvement</div></div>
+        <div class="metric"><div class="metric-val">1</div><div class="metric-label">Standardized manual co-authored</div></div>
+        <div class="metric"><div class="metric-val">3</div><div class="metric-label">Person collaborative team</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bridge">
+  <div class="section-inner">
+    <span class="eyebrow reveal">Transferable Value</span>
+    <h2 class="heading-xl reveal" style="color:var(--white)">These skills are not<br><em>healthcare-specific</em></h2>
+    <p class="lead reveal" style="color:rgba(250,250,248,0.38)">Every competency developed in high-stakes, regulated environments maps directly to what corporate project and program management demands.</p>
+    <table class="bridge-table reveal">
+      <thead>
+        <tr>
+          <th>My experience</th>
+          <th></th>
+          <th>Corporate equivalent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="bridge-context">Managing clinical and operations teams simultaneously</td>
+          <td class="bridge-arrow-cell">&#8594;</td>
+          <td class="bridge-corporate">Leading <strong>cross-functional project teams</strong> across departments with competing priorities, reporting structures, and stakeholder agendas</td>
+        </tr>
+        <tr>
+          <td class="bridge-context">Regulatory compliance documentation</td>
+          <td class="bridge-arrow-cell">&#8594;</td>
+          <td class="bridge-corporate"><strong>Risk management, audit readiness, and governance frameworks</strong> with version-controlled project documentation and zero-defect standards</td>
+        </tr>
+        <tr>
+          <td class="bridge-context">EMR platform reporting and KPI dashboards</td>
+          <td class="bridge-arrow-cell">&#8594;</td>
+          <td class="bridge-corporate"><strong>Enterprise software management</strong> and data-driven executive reporting that translates operational data into decisions leadership can act on</td>
+        </tr>
+        <tr>
+          <td class="bridge-context">Six Sigma integration into a live program</td>
+          <td class="bridge-arrow-cell">&#8594;</td>
+          <td class="bridge-corporate"><strong>Process framework implementation</strong> and DMAIC methodology applied at the program level, not just in theory</td>
+        </tr>
+        <tr>
+          <td class="bridge-context">Multi-provider care coordination</td>
+          <td class="bridge-arrow-cell">&#8594;</td>
+          <td class="bridge-corporate"><strong>Vendor management</strong> and multi-workstream dependency management across external stakeholders with competing timelines</td>
+        </tr>
+        <tr>
+          <td class="bridge-context">Crisis program design under pandemic conditions</td>
+          <td class="bridge-arrow-cell">&#8594;</td>
+          <td class="bridge-corporate"><strong>Rapid scoping under constraint</strong> and delivering standardized, scalable outputs under pressure with a small, distributed team</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <span class="eyebrow reveal">Let's Connect</span>
+        <h2 class="heading-xl reveal">Open to the<br><em>right role</em></h2>
+        <p class="lead reveal">Actively pursuing project manager, program manager, and project scheduler positions across healthcare and corporate environments.</p>
+        <div class="reveal">
+          <div class="contact-item"><span class="c-label">Email</span><span class="c-val"><a href="mailto:kayleegassen@gmail.com">kayleegassen@gmail.com</a></span></div>
+          <div class="contact-item"><span class="c-label">Location</span><span class="c-val">Denver, CO &mdash; Open to Remote and Hybrid</span></div>
+          <div class="contact-item"><span class="c-label">Portfolio</span><span class="c-val"><a href="https://www.kayleegassen.com" target="_blank">kayleegassen.com</a></span></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="status-panel">
+          <p class="status-label">Current Status</p>
+          <h3 class="status-heading">Actively seeking<br><em>new opportunities</em></h3>
+          <p class="status-body">Available for full-time roles immediately. Comfortable stepping into structured PM teams and equally comfortable building from scratch. Open to healthcare, corporate, nonprofit, and government environments.</p>
+          <div class="status-targets">
+            <div class="target-row"><div class="target-dot"></div>Project Manager</div>
+            <div class="target-row"><div class="target-dot"></div>Program Manager</div>
+            <div class="target-row"><div class="target-dot"></div>Project Scheduler</div>
+            <div class="target-row"><div class="target-dot"></div>Operations Program Lead</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="footer-mark">Kaylee Gassen</p>
+  <p class="footer-right">Denver, CO &nbsp;&middot;&nbsp; Program and Project Management</p>
+</footer>
+
+<script>
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+});
+function animateRing() {
+  rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+  ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+  requestAnimationFrame(animateRing);
+}
+animateRing();
+const reveals = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 70);
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.07 });
+reveals.forEach(el => io.observe(el));
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 140) current = s.id; });
+  navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : ''; });
+}, { passive: true });
+</script>
+</body>
+</html>
