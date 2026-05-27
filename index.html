@@ -9,7 +9,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
-/* ─── RESET ─── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:#060d18;color:#dde6f4;font-family:'IBM Plex Sans',system-ui,sans-serif;font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
@@ -20,6 +19,7 @@ body{background:#060d18;color:#dde6f4;font-family:'IBM Plex Sans',system-ui,sans
   --grn:#10b981;--ggl:rgba(16,185,129,.1);
   --amb:#f59e0b;--agl:rgba(245,158,11,.09);
   --pur:#8b5cf6;--pgl:rgba(139,92,246,.09);
+  --red:#ef4444;
   --txt:#dde6f4;--sub:#8aa4c0;--dim:#3d5270;
   --nav:60px;--max:1100px;--r:6px;
   --mono:'IBM Plex Mono',monospace;
@@ -30,7 +30,7 @@ section{padding:72px 0;border-top:1px solid var(--b0)}
 .rule{width:36px;height:2px;background:var(--blue);margin:10px 0 32px}
 h2{font-size:clamp(1.4rem,2.8vw,2rem);font-weight:600;letter-spacing:-.01em}
 
-/* ─── NAV ─── */
+/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav);background:rgba(6,13,24,.97);border-bottom:1px solid var(--b0);backdrop-filter:blur(12px)}
 .ni{max-width:var(--max);margin:0 auto;padding:0 36px;height:100%;display:flex;align-items:center;justify-content:space-between}
 .nl{font-weight:600;font-size:.9rem;color:var(--txt);text-decoration:none}
@@ -42,17 +42,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav);background
 .nres:hover{background:var(--bgl)}
 .nres svg{width:11px;height:11px}
 
-/* ─── BUTTONS ─── */
+/* BUTTONS */
 .btn{font-size:.78rem;font-weight:500;padding:10px 22px;border-radius:var(--r);text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:all .15s;cursor:pointer;border:none}
 .btn svg{width:13px;height:13px;flex-shrink:0}
 .btn-blue{background:var(--blue);color:#fff}.btn-blue:hover{background:#1e4db7}
 .btn-grn{background:var(--ggl);border:1px solid rgba(16,185,129,.28);color:var(--grn)}.btn-grn:hover{border-color:var(--grn)}
-.btn-amb{background:var(--agl);border:1px solid rgba(245,158,11,.3);color:var(--amb)}.btn-amb:hover{border-color:var(--amb)}
-.btn-pur{background:var(--pgl);border:1px solid rgba(139,92,246,.3);color:var(--pur)}.btn-pur:hover{border-color:var(--pur)}
 .btn-ghost{border:1px solid var(--b1);color:var(--sub)}.btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
 .btn-sm{padding:7px 15px;font-size:.73rem}
+.btn-xs{padding:4px 10px;font-size:.68rem}
 
-/* ─── HERO ─── */
+/* HERO */
 #home{padding:calc(var(--nav) + 80px) 0 80px;border-top:none}
 .hbadge{display:inline-flex;align-items:center;gap:7px;font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--grn);border:1px solid rgba(16,185,129,.28);background:var(--ggl);padding:5px 12px;border-radius:100px;margin-bottom:20px}
 .hbadge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--grn);animation:pulse 2s infinite}
@@ -66,7 +65,7 @@ h1{font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.15;letter-spacin
 .tag.hi{border-color:rgba(59,130,246,.38);color:var(--blue);background:var(--bgl)}
 .hbtns{display:flex;gap:8px;flex-wrap:wrap}
 
-/* ─── IMPACT STRIP ─── */
+/* IMPACT */
 #impact{padding:44px 0;background:var(--bg1)}
 .ig{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--b0)}
 .ic{background:var(--bg1);padding:20px 16px}
@@ -74,7 +73,7 @@ h1{font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.15;letter-spacin
 .icn sup{font-size:.85rem}
 .ict{font-size:.74rem;color:var(--sub);line-height:1.45}
 
-/* ─── ABOUT ─── */
+/* ABOUT */
 #about .ag{display:grid;grid-template-columns:3fr 2fr;gap:48px}
 .ap{font-size:.93rem;color:var(--sub);line-height:1.85;margin-bottom:18px}
 .atags{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px}
@@ -86,7 +85,7 @@ h1{font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.15;letter-spacin
 .sbv a{color:var(--blue);text-decoration:none}.sbv a:hover{text-decoration:underline}
 .sbv.g{color:var(--grn)}.sbv.b{color:var(--blue)}
 
-/* ─── EXPERIENCE ─── */
+/* EXPERIENCE */
 .el{display:flex;flex-direction:column;gap:2px}
 .ec{background:var(--bg0);border:1px solid var(--b0);border-radius:var(--r);overflow:hidden}
 .eh{background:var(--bg1);padding:18px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;border-bottom:1px solid var(--b0)}
@@ -104,7 +103,7 @@ h1{font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.15;letter-spacin
 .ebul{display:flex;align-items:flex-start;gap:8px;font-size:.81rem;color:var(--sub);line-height:1.6}
 .edot{width:4px;height:4px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:7px}
 
-/* ─── CASE STUDIES ─── */
+/* CASE STUDIES */
 .csl{display:flex;flex-direction:column;gap:16px}
 .csc{border:1px solid var(--b0);border-radius:var(--r);overflow:hidden}
 .csh{background:var(--bg1);padding:18px 24px;display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--b0)}
@@ -134,125 +133,145 @@ h1{font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.15;letter-spacin
 .csmn.g{color:var(--grn)}
 .csmlb{font-size:.61rem;color:var(--dim);line-height:1.35}
 
-/* ─── TOOLS SECTION ─── */
+/* TOOLS SECTION - MAIN TABS */
 #tools{background:var(--bg1)}
 .tool-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:24px}
 .ttab{font-size:.75rem;font-weight:500;padding:8px 18px;border-radius:var(--r);border:1px solid var(--b0);background:var(--bg0);color:var(--sub);cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:7px}
 .ttab:hover{border-color:var(--b1);color:var(--txt)}
 .ttab.active{background:var(--blue);color:#fff;border-color:var(--blue)}
-.ttab-icon{font-size:.9rem}
 .tpanel{display:none}
 .tpanel.active{display:block}
 
-/* ─── DASHBOARD TAB ─── */
-.dash-kpi-row{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:18px}
+/* DASHBOARD */
+.dkpi-row{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:18px}
 .dkpi{background:var(--bg0);border:1px solid var(--b0);border-left:3px solid;border-radius:var(--r);padding:14px 16px}
-.dkpi-lbl{font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--sub);margin-bottom:6px}
-.dkpi-val{font-size:1.6rem;font-weight:600;line-height:1;margin-bottom:3px}
-.dkpi-sub{font-size:.64rem;color:var(--grn)}
-.dash-charts{display:grid;grid-template-columns:3fr 2fr;gap:12px;margin-bottom:12px}
-.dash-chart-single{margin-bottom:12px}
-.chart-panel{background:var(--bg0);border:1px solid var(--b0);border-radius:var(--r);padding:16px}
-.chart-title{font-size:.73rem;font-weight:500;color:var(--txt);margin-bottom:4px}
-.chart-sub{font-size:.64rem;color:var(--dim);margin-bottom:12px}
-/* CRITICAL: fixed height wrappers for all canvases */
+.dkpi-l{font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--sub);margin-bottom:6px}
+.dkpi-v{font-size:1.6rem;font-weight:600;line-height:1;margin-bottom:3px}
+.dkpi-s{font-size:.64rem;color:var(--grn)}
+.dcharts{display:grid;grid-template-columns:3fr 2fr;gap:12px;margin-bottom:12px}
+.chart-box{background:var(--bg0);border:1px solid var(--b0);border-radius:var(--r);padding:16px}
+.chart-box h4{font-size:.73rem;font-weight:500;color:var(--txt);margin-bottom:3px}
+.chart-box p{font-size:.64rem;color:var(--dim);margin-bottom:12px}
 .ch{position:relative;width:100%;height:220px}
 .ch-sm{position:relative;width:100%;height:160px}
-.dash-bottom{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px}
-.leg{display:flex;align-items:center;gap:5px;font-size:.68rem;color:var(--sub)}
-.leg-dot{width:8px;height:8px;border-radius:2px}
-.comp-table{width:100%;border-collapse:collapse}
-.comp-table th{font-size:.6rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);padding:0 0 8px;text-align:left;border-bottom:1px solid var(--b0)}
-.comp-table td{padding:8px 0;border-bottom:1px solid rgba(28,52,85,.5);font-size:.8rem;color:var(--sub)}
-.comp-table td:last-child{text-align:right}
+.leg{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px}
+.leg-i{display:flex;align-items:center;gap:5px;font-size:.68rem;color:var(--sub)}
+.leg-d{width:8px;height:8px;border-radius:2px}
+.comp-tbl{width:100%;border-collapse:collapse}
+.comp-tbl th{font-size:.6rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);padding:0 0 8px;text-align:left;border-bottom:1px solid var(--b0)}
+.comp-tbl td{padding:8px 0;border-bottom:1px solid rgba(28,52,85,.5);font-size:.8rem;color:var(--sub)}
+.comp-tbl td:last-child{text-align:right}
 .cbadge{font-size:.62rem;font-weight:500;padding:2px 8px;border-radius:3px;background:var(--ggl);border:1px solid rgba(16,185,129,.25);color:var(--grn)}
 
-/* ─── DMAIC TAB ─── */
-.dmaic-phases{display:flex;gap:0;margin-bottom:24px}
-.dmaic-phase{flex:1;padding:12px 16px;text-align:center;position:relative;cursor:pointer;transition:all .2s;border:1px solid var(--b0)}
-.dmaic-phase+.dmaic-phase{border-left:none}
-.dmaic-phase:first-child{border-radius:var(--r) 0 0 var(--r)}
-.dmaic-phase:last-child{border-radius:0 var(--r) var(--r) 0}
-.dmaic-phase.dp-active{z-index:1}
-.dp-letter{font-size:1.3rem;font-weight:700;margin-bottom:2px}
-.dp-name{font-size:.62rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
-.dmaic-content{display:none}
-.dmaic-content.dc-active{display:block}
-.dmaic-box{background:var(--bg0);border:1px solid var(--b0);border-radius:var(--r);padding:20px 24px;margin-bottom:12px}
-.dmaic-box h4{font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
-.dmaic-box p{font-size:.84rem;color:var(--sub);line-height:1.75}
-.dmaic-table{width:100%;border-collapse:collapse;font-size:.8rem}
-.dmaic-table th{background:var(--bg2);color:var(--blue);font-size:.64rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:8px 12px;text-align:left;border:1px solid var(--b0)}
-.dmaic-table td{padding:8px 12px;border:1px solid var(--b0);color:var(--sub);vertical-align:top;line-height:1.5}
-.dmaic-table tr:nth-child(even) td{background:var(--bg2)}
-.dmaic-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}
-.dm-card{background:var(--bg0);border:1px solid var(--b0);border-radius:var(--r);padding:16px;text-align:center}
-.dm-before{font-size:.68rem;color:var(--dim);margin-bottom:4px}
-.dm-val-row{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:4px}
-.dm-b{font-size:1.1rem;font-weight:600;color:var(--dim)}
-.dm-arrow{font-size:.8rem;color:var(--grn)}
-.dm-a{font-size:1.1rem;font-weight:600;color:var(--grn)}
-.dm-lbl{font-size:.65rem;color:var(--dim)}
+/* DMAIC TAB */
+.d-phases{display:flex;margin-bottom:24px}
+.d-phase{flex:1;padding:12px 8px;text-align:center;border:1px solid var(--b0);cursor:pointer;transition:all .2s}
+.d-phase+.d-phase{border-left:none}
+.d-phase:first-child{border-radius:var(--r) 0 0 var(--r)}
+.d-phase:last-child{border-radius:0 var(--r) var(--r) 0}
+.dph-l{font-size:1.3rem;font-weight:700;margin-bottom:2px}
+.dph-n{font-size:.62rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.d-content{display:none}
+.d-content.on{display:block}
+.d-box{background:var(--bg0);border:1px solid var(--b0);border-radius:var(--r);padding:20px 24px;margin-bottom:12px}
+.d-box h4{font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.d-box p{font-size:.84rem;color:var(--sub);line-height:1.75}
+.d-tbl{width:100%;border-collapse:collapse;font-size:.8rem;margin-top:8px}
+.d-tbl th{background:var(--bg2);color:var(--blue);font-size:.64rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:8px 12px;text-align:left;border:1px solid var(--b0)}
+.d-tbl td{padding:8px 12px;border:1px solid var(--b0);color:var(--sub);vertical-align:top;line-height:1.5}
+.d-tbl tr:nth-child(even) td{background:var(--bg2)}
 .fb-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--b0);border-radius:var(--r);overflow:hidden;margin-bottom:12px}
 .fb-cell{background:var(--bg0);padding:16px 20px}
-.fb-cell-title{font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.fb-cause{display:flex;align-items:flex-start;gap:6px;font-size:.8rem;color:var(--sub);margin-bottom:7px;line-height:1.5}
-.fb-cause::before{content:'↳';color:var(--blue);flex-shrink:0;margin-top:1px}
-.dmaic-steps{display:flex;flex-direction:column;gap:8px}
-.dmaic-step{display:flex;align-items:flex-start;gap:12px;background:var(--bg0);border:1px solid var(--b0);border-radius:var(--r);padding:14px 18px}
-.step-num{width:26px;height:26px;border-radius:50%;background:var(--blue);color:#fff;font-size:.75rem;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.step-title{font-size:.85rem;font-weight:500;margin-bottom:3px}
-.step-desc{font-size:.78rem;color:var(--sub);line-height:1.6}
-.result-metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:16px}
+.fb-ct{font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+.fb-c{display:flex;align-items:flex-start;gap:6px;font-size:.8rem;color:var(--sub);margin-bottom:7px;line-height:1.5}
+.fb-c::before{content:'↳';color:var(--blue);flex-shrink:0}
+.d-steps{display:flex;flex-direction:column;gap:8px}
+.d-step{display:flex;align-items:flex-start;gap:12px;background:var(--bg0);border:1px solid var(--b0);border-radius:var(--r);padding:14px 18px}
+.snum{width:26px;height:26px;border-radius:50%;background:var(--blue);color:#fff;font-size:.75rem;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.st{font-size:.85rem;font-weight:500;margin-bottom:3px}
+.sd{font-size:.78rem;color:var(--sub);line-height:1.6}
+.d-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}
+.dm{background:var(--bg0);border:1px solid var(--b0);border-radius:var(--r);padding:16px;text-align:center}
+.dm-b{font-size:1rem;font-weight:600;color:var(--dim)}
+.dm-a{font-size:1rem;font-weight:600;color:var(--grn)}
+.dm-arr{font-size:.8rem;color:var(--grn)}
+.dm-l{font-size:.65rem;color:var(--dim);margin-top:4px}
+.res-mets{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
 .rm{background:var(--bg0);border:1px solid var(--b0);border-radius:var(--r);padding:14px;text-align:center}
-.rm-num{font-size:1.3rem;font-weight:600;color:var(--grn);margin-bottom:3px}
-.rm-lbl{font-size:.64rem;color:var(--dim);line-height:1.3}
+.rm-n{font-size:1.3rem;font-weight:600;color:var(--grn);margin-bottom:3px}
+.rm-l{font-size:.64rem;color:var(--dim);line-height:1.3}
 
-/* ─── AI TOOL TAB ─── */
-.ai-tool{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.ai-input-panel,.ai-output-panel{background:var(--bg0);border:1px solid var(--b0);border-radius:var(--r);padding:20px}
-.ai-panel-title{font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--sub);margin-bottom:12px;display:flex;align-items:center;justify-content:space-between}
-.ai-select{width:100%;padding:8px 10px;background:var(--bg2);border:1px solid var(--b0);border-radius:var(--r);color:var(--txt);font-size:.8rem;margin-bottom:10px;font-family:inherit;outline:none}
-.ai-select:focus{border-color:var(--blue)}
-.ai-textarea{width:100%;height:220px;padding:10px 12px;background:var(--bg2);border:1px solid var(--b0);border-radius:var(--r);color:var(--txt);font-size:.8rem;font-family:inherit;resize:none;outline:none;line-height:1.6}
-.ai-textarea:focus{border-color:var(--blue)}
-.ai-textarea::placeholder{color:var(--dim)}
-.ai-btns{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
-.ai-output{min-height:280px}
-.ai-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;height:280px;color:var(--dim);font-size:.82rem;text-align:center;gap:8px}
-.ai-placeholder-icon{font-size:2rem}
-.ai-section{margin-bottom:16px}
-.ai-section-title{font-size:.64rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--b0)}
-.ai-action-item{background:var(--bg2);border:1px solid var(--b0);border-radius:var(--r);padding:10px 14px;margin-bottom:6px;font-size:.8rem;line-height:1.5}
-.ai-action-text{color:var(--txt);margin-bottom:5px}
-.ai-action-meta{display:flex;gap:8px;flex-wrap:wrap}
-.ai-chip{font-size:.62rem;padding:2px 8px;border-radius:3px}
-.ai-chip-owner{background:var(--bgl);border:1px solid rgba(59,130,246,.2);color:var(--blue)}
-.ai-chip-due{background:var(--agl);border:1px solid rgba(245,158,11,.25);color:var(--amb)}
-.ai-chip-p-high{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);color:#ef4444}
-.ai-chip-p-med{background:var(--bgl);border:1px solid rgba(59,130,246,.2);color:var(--blue)}
-.ai-chip-p-low{background:var(--ggl);border:1px solid rgba(16,185,129,.2);color:var(--grn)}
-.ai-decision{font-size:.8rem;color:var(--sub);padding:7px 12px;border-left:2px solid var(--grn);margin-bottom:6px;background:var(--bg2);border-radius:0 var(--r) var(--r) 0;line-height:1.5}
-.ai-summary-box{background:var(--bg2);border:1px solid var(--b0);border-radius:var(--r);padding:12px 14px;font-size:.82rem;color:var(--sub);line-height:1.7}
-.ai-attendee{display:inline-block;font-size:.72rem;padding:3px 10px;border-radius:3px;background:var(--pgl);border:1px solid rgba(139,92,246,.25);color:var(--pur);margin:2px}
-.processing{display:flex;align-items:center;justify-content:center;height:280px;flex-direction:column;gap:12px;color:var(--sub);font-size:.84rem}
-.spinner{width:28px;height:28px;border:2px solid var(--b1);border-top-color:var(--blue);border-radius:50%;animation:spin .7s linear infinite}
+/* AI TOOL */
+.ai-wrap{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ai-panel{background:var(--bg0);border:1px solid var(--b0);border-radius:var(--r);padding:20px}
+.ai-ptitle{font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--sub);margin-bottom:12px;display:flex;align-items:center;justify-content:space-between}
+.ai-sel{width:100%;padding:8px 10px;background:var(--bg2);border:1px solid var(--b0);border-radius:var(--r);color:var(--txt);font-size:.8rem;margin-bottom:10px;font-family:inherit;outline:none}
+.ai-sel:focus{border-color:var(--blue)}
+.ai-ta{width:100%;height:220px;padding:10px 12px;background:var(--bg2);border:1px solid var(--b0);border-radius:var(--r);color:var(--txt);font-size:.8rem;font-family:inherit;resize:none;outline:none;line-height:1.6}
+.ai-ta:focus{border-color:var(--blue)}
+.ai-ta::placeholder{color:var(--dim)}
+.ai-hint{font-size:.68rem;color:var(--dim);margin-top:10px}
+.ai-out{min-height:280px}
+.ai-ph{display:flex;flex-direction:column;align-items:center;justify-content:center;height:280px;color:var(--dim);font-size:.82rem;text-align:center;gap:8px}
+.ai-sec{margin-bottom:16px}
+.ai-sec-h{font-size:.64rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:8px;padding-bottom:5px;border-bottom:1px solid var(--b0)}
+.ai-item{background:var(--bg2);border:1px solid var(--b0);border-radius:var(--r);padding:10px 14px;margin-bottom:6px}
+.ai-item-t{font-size:.8rem;color:var(--txt);margin-bottom:5px;line-height:1.5}
+.ai-chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-size:.62rem;padding:2px 8px;border-radius:3px}
+.chip-o{background:var(--bgl);border:1px solid rgba(59,130,246,.2);color:var(--blue)}
+.chip-d{background:var(--agl);border:1px solid rgba(245,158,11,.25);color:var(--amb)}
+.chip-h{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);color:var(--red)}
+.chip-m{background:var(--bgl);border:1px solid rgba(59,130,246,.2);color:var(--blue)}
+.chip-l{background:var(--ggl);border:1px solid rgba(16,185,129,.2);color:var(--grn)}
+.ai-dec{font-size:.8rem;color:var(--sub);padding:7px 12px;border-left:2px solid var(--grn);margin-bottom:6px;background:var(--bg2);border-radius:0 var(--r) var(--r) 0;line-height:1.5}
+.ai-att{display:inline-block;font-size:.72rem;padding:3px 10px;border-radius:3px;background:var(--pgl);border:1px solid rgba(139,92,246,.25);color:var(--pur);margin:2px}
+.ai-hdr{background:var(--bg2);border:1px solid var(--b0);border-radius:var(--r);padding:12px 15px;margin-bottom:14px}
+.spinner{width:28px;height:28px;border:2px solid var(--b1);border-top-color:var(--blue);border-radius:50%;animation:spin .7s linear infinite;margin:auto}
 @keyframes spin{to{transform:rotate(360deg)}}
-.ai-copy-btn{font-size:.68rem;color:var(--blue);background:none;border:1px solid rgba(59,130,246,.25);border-radius:3px;padding:3px 8px;cursor:pointer;transition:all .15s}
-.ai-copy-btn:hover{background:var(--bgl)}
+.proc{display:flex;flex-direction:column;align-items:center;justify-content:center;height:280px;gap:12px;color:var(--sub);font-size:.84rem}
+.xcopy{font-size:.68rem;color:var(--blue);background:none;border:1px solid rgba(59,130,246,.25);border-radius:3px;padding:3px 8px;cursor:pointer;transition:all .15s}
+.xcopy:hover{background:var(--bgl)}
 
-/* ─── TEMPLATES TAB ─── */
-.tmpl-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-.tmpl-card{background:var(--bg0);border:1px solid var(--b0);border-radius:var(--r);padding:20px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;text-decoration:none;transition:border-color .2s}
-.tmpl-card:hover{border-color:var(--blue)}
-.tmpl-icon{font-size:1.6rem}
-.tmpl-name{font-size:.82rem;font-weight:500;color:var(--txt);line-height:1.3}
-.tmpl-desc{font-size:.71rem;color:var(--sub);line-height:1.5}
-.tmpl-dl{font-size:.7rem;font-weight:500;color:var(--blue);display:flex;align-items:center;gap:4px;margin-top:auto}
-.tmpl-dl svg{width:11px;height:11px}
+/* TEMPLATES TAB */
+.tmpl-tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:18px;border-bottom:1px solid var(--b0);padding-bottom:14px}
+.tmpl-tab{font-size:.72rem;font-weight:500;padding:6px 14px;border-radius:var(--r);border:1px solid var(--b0);background:var(--bg0);color:var(--sub);cursor:pointer;transition:all .15s}
+.tmpl-tab:hover{border-color:var(--b1);color:var(--txt)}
+.tmpl-tab.active{background:var(--bg2);color:var(--txt);border-color:var(--b1)}
+.tmpl-panel{display:none}
+.tmpl-panel.active{display:block}
+/* Spreadsheet styles */
+.sheet-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.sheet-bar-l{font-size:.78rem;font-weight:500;color:var(--txt)}
+.sheet-bar-l span{font-size:.68rem;color:var(--dim);font-weight:300;margin-left:8px}
+.sheet-bar-r{display:flex;gap:6px}
+.sht{width:100%;border-collapse:collapse;font-size:.79rem}
+.sht th{background:var(--bg3);color:var(--blue);font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:8px 12px;text-align:left;border:1px solid var(--b0);white-space:nowrap}
+.sht td{border:1px solid var(--b0);padding:0;vertical-align:top}
+.shl{background:var(--bg2);color:var(--sub);font-size:.75rem;font-weight:500;padding:8px 12px;vertical-align:middle;white-space:nowrap;min-width:180px}
+.shv{color:var(--txt);padding:7px 10px;outline:none;min-height:34px;line-height:1.5}
+.shv[contenteditable=true]:focus{background:rgba(59,130,246,.06);box-shadow:inset 0 0 0 1px var(--blue)}
+.shv[contenteditable=true]:empty::before{content:attr(data-ph);color:var(--dim);font-style:italic}
+.sh-section{background:var(--b0) !important;color:var(--blue) !important;font-size:.64rem !important;font-weight:600 !important;letter-spacing:.14em !important;text-transform:uppercase !important;padding:7px 12px !important;text-align:left}
+.sh-center{text-align:center;padding:7px 6px}
+.sh-R{background:rgba(59,130,246,.12);color:var(--blue);font-weight:600;text-align:center;padding:7px 6px}
+.sh-A{background:rgba(139,92,246,.12);color:var(--pur);font-weight:600;text-align:center;padding:7px 6px}
+.sh-C{background:rgba(16,185,129,.1);color:var(--grn);font-weight:600;text-align:center;padding:7px 6px}
+.sh-I{background:rgba(245,158,11,.08);color:var(--amb);font-weight:600;text-align:center;padding:7px 6px}
+.risk-H{background:rgba(239,68,68,.12);color:var(--red);font-weight:600;text-align:center;padding:7px 6px}
+.risk-M{background:rgba(245,158,11,.1);color:var(--amb);font-weight:600;text-align:center;padding:7px 6px}
+.risk-L{background:rgba(16,185,129,.1);color:var(--grn);font-weight:600;text-align:center;padding:7px 6px}
+.sh-score{font-family:var(--mono);font-weight:600;text-align:center;padding:7px 6px}
+.sc-high{color:var(--red)}
+.sc-med{color:var(--amb)}
+.sc-low{color:var(--grn)}
+.kpi-cat{background:var(--bg3) !important;color:var(--txt) !important;font-weight:500 !important;padding:8px 12px !important;font-size:.76rem !important}
+.kpi-on{background:var(--ggl);color:var(--grn);font-weight:600;text-align:center;padding:7px 6px;font-size:.72rem}
+.kpi-warn{background:var(--agl);color:var(--amb);font-weight:600;text-align:center;padding:7px 6px;font-size:.72rem}
+.phase-hdr{background:var(--blue) !important;color:#fff !important;font-weight:600 !important;font-size:.72rem !important;padding:9px 12px !important;letter-spacing:.06em}
+.tbl-scroll{overflow-x:auto;border-radius:var(--r);border:1px solid var(--b0)}
 
-/* ─── SKILLS ─── */
+/* SKILLS */
 .sg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--b0)}
 .sc{background:var(--bg0);padding:24px 22px}
 .sce{font-size:.57rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:4px}
@@ -261,7 +280,7 @@ h1{font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.15;letter-spacin
 .si{display:flex;align-items:center;gap:7px;font-size:.79rem;color:var(--sub);padding:7px 10px;background:var(--bg1);border:1px solid var(--b0);border-radius:var(--r)}
 .sid{width:5px;height:5px;border-radius:50%;flex-shrink:0}
 
-/* ─── EDUCATION ─── */
+/* EDUCATION */
 #education{background:var(--bg1)}
 .edu{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;border:1px solid var(--b0);border-radius:var(--r);padding:18px 24px;margin-bottom:12px}
 .edud{font-size:.9rem;font-weight:600;margin-bottom:2px}
@@ -273,7 +292,7 @@ h1{font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.15;letter-spacin
 .certn{font-size:.82rem;font-weight:500;margin-bottom:2px}
 .certi{font-size:.7rem;color:var(--sub)}
 
-/* ─── CONTACT ─── */
+/* CONTACT */
 #contact{background:var(--bg1)}
 .ctg{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
 .cth{font-size:clamp(1.1rem,2.2vw,1.55rem);font-weight:600;margin-bottom:8px}
@@ -282,8 +301,8 @@ h1{font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.15;letter-spacin
 .clr{background:var(--bg0);padding:11px 15px;display:flex;align-items:center;justify-content:space-between}
 .clk{font-size:.58rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
 .clv{font-size:.81rem;color:var(--txt)}
-.clv a{text-decoration:none;transition:color .15s}.clv a:hover{text-decoration:underline}
-.clv.b a{color:var(--blue)}.clv.g{color:var(--grn)}.clv.a a{color:var(--amb)}
+.clv a{text-decoration:none;color:var(--blue)}.clv a:hover{text-decoration:underline}
+.clv.g{color:var(--grn)}
 .ob{border:1px solid var(--b0);border-radius:var(--r);overflow:hidden}
 .obt{background:var(--bg2);padding:22px;border-bottom:1px solid var(--b0)}
 .obs{font-size:.58rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--grn);display:flex;align-items:center;gap:6px;margin-bottom:10px}
@@ -294,17 +313,17 @@ h1{font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.15;letter-spacin
 .obrp{font-size:.7rem;font-weight:500;padding:4px 11px;border-radius:var(--r);border:1px solid var(--b1);color:var(--sub);background:var(--bg2)}
 .obc{padding:14px 22px;background:var(--bg0);display:flex;gap:8px;flex-wrap:wrap}
 
-/* ─── FOOTER ─── */
+/* FOOTER */
 footer{border-top:1px solid var(--b0);padding:22px 0}
 .fi{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
 .fn{font-weight:600;font-size:.82rem;color:var(--sub)}
 .fd{font-size:.7rem;color:var(--dim);font-family:var(--mono)}
 
-/* ─── FADE ─── */
+/* FADE */
 .f{opacity:0;transform:translateY(12px);transition:opacity .45s ease,transform .45s ease}
 .f.in{opacity:1;transform:none}
 
-/* ─── RESPONSIVE ─── */
+/* RESPONSIVE */
 @media(max-width:900px){
   .wrap{padding:0 18px}.ni{padding:0 18px}
   .nlinks li:not(:last-child):not(:nth-last-child(2)){display:none}
@@ -315,25 +334,21 @@ footer{border-top:1px solid var(--b0);padding:22px 0}
   #about .ag,.ctg{grid-template-columns:1fr}
   .ecols,.csbody{grid-template-columns:1fr}
   .ecol:last-child,.cscol+.cscol{border-left:none;border-top:1px solid var(--b0)}
-  .csmeta,.csmets{grid-template-columns:repeat(2,1fr)}
-  .dash-charts,.dash-bottom,.ai-tool{grid-template-columns:1fr}
-  .dash-kpi-row{grid-template-columns:repeat(3,1fr)}
-  .dmaic-metrics,.result-metrics{grid-template-columns:repeat(3,1fr)}
-  .tmpl-grid{grid-template-columns:repeat(3,1fr)}
-  .sg,.certg{grid-template-columns:1fr}
+  .csmeta,.csmets,.d-metrics,.res-mets{grid-template-columns:repeat(2,1fr)}
+  .dcharts,.ai-wrap{grid-template-columns:1fr}
+  .dkpi-row{grid-template-columns:repeat(3,1fr)}
   .fb-grid{grid-template-columns:1fr}
-  .dmaic-phases .dp-name{display:none}
+  .sg,.certg{grid-template-columns:1fr}
 }
 @media(max-width:520px){
-  .dmaic-metrics,.result-metrics{grid-template-columns:repeat(2,1fr)}
-  .tmpl-grid{grid-template-columns:repeat(2,1fr)}
-  .dash-kpi-row{grid-template-columns:repeat(2,1fr)}
+  .dkpi-row{grid-template-columns:repeat(2,1fr)}
+  .d-metrics,.res-mets{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 </head>
 <body>
 
-<!-- ─── NAV ─── -->
+<!-- NAV -->
 <nav>
   <div class="ni">
     <a href="#home" class="nl">Kaylee <b>Gassen</b></a>
@@ -348,7 +363,7 @@ footer{border-top:1px solid var(--b0);padding:22px 0}
   </div>
 </nav>
 
-<!-- ─── HERO ─── -->
+<!-- HERO -->
 <section id="home">
   <div class="wrap">
     <div class="hbadge f">Open to new opportunities</div>
@@ -365,40 +380,35 @@ footer{border-top:1px solid var(--b0);padding:22px 0}
     <div class="hbtns f">
       <a href="#tools" class="btn btn-blue">View Projects &amp; Tools</a>
       <a href="#case-studies" class="btn btn-ghost">Case Studies</a>
-      <a href="Kaylee_Gassen_Resume.docx" download class="btn btn-grn">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2v8M5 7l3 3 3-3M2 13h12"/></svg>
-        Download Resume
-      </a>
+      <a href="Kaylee_Gassen_Resume.docx" download class="btn btn-grn"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2v8M5 7l3 3 3-3M2 13h12"/></svg>Download Resume</a>
     </div>
   </div>
 </section>
 
-<!-- ─── IMPACT ─── -->
+<!-- IMPACT -->
 <section id="impact">
   <div class="wrap">
     <div class="lbl f">Operational Impact — Verified Results</div>
     <div class="ig f">
       <div class="ic"><div class="icn">20<sup>%</sup></div><div class="ict">Improved engagement &amp; wellbeing outcomes across programs</div></div>
       <div class="ic"><div class="icn">15<sup>+</sup></div><div class="ict">Weekly multidisciplinary meetings coordinated</div></div>
-      <div class="ic"><div class="icn">100<sup>%</sup></div><div class="ict">Documentation compliance — zero findings, all programs</div></div>
+      <div class="ic"><div class="icn">100<sup>%</sup></div><div class="ict">Documentation compliance — zero findings</div></div>
       <div class="ic"><div class="icn">8<sup>+</sup></div><div class="ict">Staff members onboarded and trained</div></div>
-      <div class="ic"><div class="icn">40</div><div class="ict">Active residential clients across managed workflows</div></div>
+      <div class="ic"><div class="icn">40</div><div class="ict">Active residential clients across workflows</div></div>
     </div>
   </div>
 </section>
 
-<!-- ─── ABOUT ─── -->
+<!-- ABOUT -->
 <section id="about">
   <div class="wrap">
     <div class="f"><span class="lbl">Professional Summary</span><div class="rule"></div></div>
     <div class="ag f">
       <div>
         <p class="ap">Program manager with 5+ years of experience coordinating healthcare operations, managing cross-functional project teams, and delivering measurable process improvements in high-compliance environments. Six Sigma Black Belt (AIGPE) with a proven record in process optimization, KPI reporting, stakeholder alignment, and compliance management.</p>
-        <p class="ap">Led end-to-end program design across behavioral health and long-term care settings, from scoping and scheduling through compliance documentation, team leadership of 9+, and executive-level KPI reporting via Power BI and Excel. Zero compliance findings across every program managed.</p>
+        <p class="ap">Led end-to-end program design across behavioral health and long-term care settings — from scoping and scheduling through compliance documentation, team leadership of 9+, and executive-level KPI reporting via Power BI and Excel. Zero compliance findings across every program managed.</p>
         <p class="ap">Actively pursuing mid-level to senior Project Manager or Program Manager roles where certifications, reporting experience, and operational background contribute immediately.</p>
-        <div class="atags">
-          <span class="atag">Denver, CO</span><span class="atag">Remote &amp; Hybrid OK</span><span class="atag">Full-Time</span><span class="atag">Healthcare · Corporate · PMO</span>
-        </div>
+        <div class="atags"><span class="atag">Denver, CO</span><span class="atag">Remote &amp; Hybrid OK</span><span class="atag">Full-Time</span><span class="atag">Healthcare · Corporate · PMO</span></div>
       </div>
       <div>
         <div class="sb">
@@ -414,50 +424,40 @@ footer{border-top:1px solid var(--b0);padding:22px 0}
   </div>
 </section>
 
-<!-- ─── EXPERIENCE ─── -->
+<!-- EXPERIENCE -->
 <section id="experience">
   <div class="wrap">
-    <div class="f"><span class="lbl">Work Experience</span><h2>Three roles with consistent results.</h2><div class="rule"></div></div>
+    <div class="f"><span class="lbl">Work Experience</span><h2>Three roles. One consistent thread: results.</h2><div class="rule"></div></div>
     <div class="el">
 
       <div class="ec f">
-        <div class="eh">
-          <div class="ehl"><div class="ebg">CURRENT</div><div><div class="et">Program Lead Counselor</div><div class="eo">Denver Children's Home</div></div></div>
-          <div class="em"><span class="eloc">Denver, CO</span><span class="edates">Jan 2023 – Present</span></div>
-        </div>
-        <div class="esum">Program operations lead for a 40-client residential youth treatment facility. Responsible for scheduling, compliance reporting, team coordination, and stakeholder communication.</div>
+        <div class="eh"><div class="ehl"><div class="ebg">CURRENT</div><div><div class="et">Program Lead Counselor</div><div class="eo">Denver Children's Home</div></div></div><div class="em"><span class="eloc">Denver, CO</span><span class="edates">Jan 2023 – Present</span></div></div>
+        <div class="esum">Program operations lead for a 40-client residential youth treatment facility — scheduling, compliance reporting, team coordination, and stakeholder communication.</div>
         <div class="ecols">
-          <div class="ecol">
-            <div class="eclbl">Operations &amp; Coordination</div>
+          <div class="ecol"><div class="eclbl">Operations &amp; Coordination</div>
             <div class="ebul"><span class="edot"></span>Manage scheduling and documentation workflows across all departments</div>
-            <div class="ebul"><span class="edot"></span>Lead 15+ weekly multidisciplinary meetings and managed all dependencies</div>
+            <div class="ebul"><span class="edot"></span>Lead 15+ weekly multidisciplinary meetings — managing all dependencies</div>
             <div class="ebul"><span class="edot"></span>Primary liaison between clinical teams, families, and 2+ service providers</div>
           </div>
-          <div class="ecol">
-            <div class="eclbl">Reporting &amp; Compliance</div>
+          <div class="ecol"><div class="eclbl">Reporting &amp; Compliance</div>
             <div class="ebul"><span class="edot"></span>Maintain 100% regulatory compliance across 15+ active EMR cases</div>
-            <div class="ebul"><span class="edot"></span>Deliver weekly and monthly KPI reports to leadership via Microsoft Excel</div>
-            <div class="ebul"><span class="edot"></span>Onboarded and trained 8+ new staff on the design through completion tracking</div>
+            <div class="ebul"><span class="edot"></span>Deliver weekly and monthly KPI reports to leadership via Excel</div>
+            <div class="ebul"><span class="edot"></span>Onboarded and trained 8+ new staff — design through completion tracking</div>
           </div>
         </div>
       </div>
 
       <div class="ec f">
-        <div class="eh">
-          <div class="ehl"><div class="ebg">PREV</div><div><div class="et">Program Manager, Recreational Therapy</div><div class="eo">Mountain Springs Recovery</div></div></div>
-          <div class="em"><span class="eloc">Denver, CO</span><span class="edates">Q1 2022 – Q4 2023</span></div>
-        </div>
-        <div class="esum">Full program ownership of 40 clients, 3 treatment tracks, cross-functional team of 9+. Operations, scheduling, budget, and compliance.</div>
+        <div class="eh"><div class="ehl"><div class="ebg">PREV</div><div><div class="et">Program Manager, Recreational Therapy</div><div class="eo">Mountain Springs Recovery</div></div></div><div class="em"><span class="eloc">Denver, CO</span><span class="edates">Q1 2022 – Q4 2023</span></div></div>
+        <div class="esum">Full program ownership — 40 clients, 3 treatment tracks, cross-functional team of 9+. Operations, scheduling, budget, and compliance.</div>
         <div class="ecols">
-          <div class="ecol">
-            <div class="eclbl">Program Management</div>
+          <div class="ecol"><div class="eclbl">Program Management</div>
             <div class="ebul"><span class="edot"></span>Directed end-to-end operations: scheduling, budget, process workflows</div>
             <div class="ebul"><span class="edot"></span>Led cross-functional team of 9+ across clinical, operations, and admin</div>
-            <div class="ebul"><span class="edot"></span>Applied Six Sigma DMAIC, resulted in +15% admissions, +30-day client retention</div>
+            <div class="ebul"><span class="edot"></span>Applied Six Sigma DMAIC — +15% admissions, +30-day client retention</div>
           </div>
-          <div class="ecol">
-            <div class="eclbl">Compliance &amp; Performance</div>
-            <div class="ebul"><span class="edot"></span>Zero compliance findings due torigorous EMR documentation and audit prep</div>
+          <div class="ecol"><div class="eclbl">Compliance &amp; Performance</div>
+            <div class="ebul"><span class="edot"></span>Zero compliance findings — rigorous EMR documentation and audit prep</div>
             <div class="ebul"><span class="edot"></span>Reduced scheduling conflicts 15% via standardized frameworks</div>
             <div class="ebul"><span class="edot"></span>Built Power BI dashboard consolidating all operational KPI data</div>
           </div>
@@ -465,20 +465,15 @@ footer{border-top:1px solid var(--b0);padding:22px 0}
       </div>
 
       <div class="ec f">
-        <div class="eh">
-          <div class="ehl"><div class="ebg">PREV</div><div><div class="et">Lead Therapist</div><div class="eo">Tampa Community Hospital</div></div></div>
-          <div class="em"><span class="eloc">Tampa, FL</span><span class="edates">2021 – 2022</span></div>
-        </div>
-        <div class="esum">Clinical coordination and scheduling lead through cross-departmental communication, EHR compliance, and performance reporting in acute care.</div>
+        <div class="eh"><div class="ehl"><div class="ebg">PREV</div><div><div class="et">Lead Therapist</div><div class="eo">Tampa Community Hospital</div></div></div><div class="em"><span class="eloc">Tampa, FL</span><span class="edates">2021 – 2022</span></div></div>
+        <div class="esum">Clinical coordination and scheduling lead — cross-departmental communication, EHR compliance, and performance reporting in acute care.</div>
         <div class="ecols">
-          <div class="ecol">
-            <div class="eclbl">Coordination</div>
+          <div class="ecol"><div class="eclbl">Coordination</div>
             <div class="ebul"><span class="edot"></span>Coordinated therapy scheduling across multidisciplinary teams</div>
             <div class="ebul"><span class="edot"></span>Facilitated cross-departmental communication in high-volume acute care</div>
           </div>
-          <div class="ecol">
-            <div class="eclbl">Reporting &amp; Documentation</div>
-            <div class="ebul"><span class="edot"></span>Maintained 100% EHR documentation compliance</div>
+          <div class="ecol"><div class="eclbl">Documentation</div>
+            <div class="ebul"><span class="edot"></span>Maintained 100% EHR documentation compliance across departments</div>
             <div class="ebul"><span class="edot"></span>Prepared clinical performance reports supporting treatment planning</div>
           </div>
         </div>
@@ -488,27 +483,24 @@ footer{border-top:1px solid var(--b0);padding:22px 0}
   </div>
 </section>
 
-<!-- ─── CASE STUDIES ─── -->
+<!-- CASE STUDIES -->
 <section id="case-studies">
   <div class="wrap">
     <div class="f"><span class="lbl">Case Studies</span><h2>Two programs. Full operational ownership.</h2><div class="rule"></div></div>
     <div class="csl">
 
       <div class="csc f">
-        <div class="csh">
-          <div><div class="csnum">PROJECT 01</div><div class="cstitle">Integrative Recovery Program Design &amp; Launch</div><div class="csorg">Mountain Springs Recovery · Behavioral Health Operations</div></div>
-          <span class="csper">Q1 2022 – Q4 2023</span>
-        </div>
+        <div class="csh"><div><div class="csnum">PROJECT 01</div><div class="cstitle">Integrative Recovery Program Design &amp; Launch</div><div class="csorg">Mountain Springs Recovery · Behavioral Health Operations</div></div><span class="csper">Q1 2022 – Q4 2023</span></div>
         <div class="csbody">
-          <div class="cscol"><div class="csclbl">Business Problem</div><div class="csctitle">Fragmented reporting, no operational visibility.</div><p class="csctext">No standardized infrastructure, no reporting framework, no centralized KPI visibility — creating real risk in a compliance-critical environment.</p></div>
-          <div class="cscol"><div class="csclbl">Solution</div><div class="csctitle">Power BI dashboard + end-to-end program framework.</div><p class="csctext">Designed the full program from scoping through execution. Developed Power BI dashboard consolidating all key metrics. Applied Six Sigma DMAIC across a cross-functional team of 9+.</p></div>
+          <div class="cscol"><div class="csclbl">Business Problem</div><div class="csctitle">Fragmented reporting, no operational visibility.</div><p class="csctext">No standardized infrastructure, no reporting framework, no centralized KPI visibility — creating compliance risk. Scheduling, compliance, and engagement data lived in disconnected systems.</p></div>
+          <div class="cscol"><div class="csclbl">Solution</div><div class="csctitle">Power BI dashboard + end-to-end program framework.</div><p class="csctext">Designed the full program from scoping through execution. Built Power BI dashboard consolidating all metrics. Applied Six Sigma DMAIC to standardize workflows across a cross-functional team of 9+.</p></div>
         </div>
         <div class="csmeta">
           <div class="csmc"><div class="csml">KPIs Tracked</div><div class="pills"><span class="pk">Scheduling Efficiency</span><span class="pk">Compliance Rate</span><span class="pk">Staff Utilization</span><span class="pk">Engagement Trends</span><span class="pk">Client Retention</span></div></div>
           <div class="csmc"><div class="csml">Tools Used</div><div class="pills"><span class="pt">Power BI</span><span class="pt">Excel</span><span class="pt">DAX</span><span class="pt">EMR Platform</span></div></div>
           <div class="csmc"><div class="csml">Methodology</div><div class="pills"><span class="pk">Lean Six Sigma (AIGPE)</span><span class="pk">DMAIC</span><span class="pk">Process Mapping</span><span class="pk">Change Management</span></div></div>
         </div>
-        <div class="csout"><div class="oi">✓</div><div><div class="olbl">Outcome</div><div class="otxt">15% admissions increase, 30-day retention improvement, zero compliance findings. Full Six Sigma case study in the Projects tab below.</div></div></div>
+        <div class="csout"><div class="oi">✓</div><div><div class="olbl">Outcome</div><div class="otxt">15% admissions increase, 30-day retention improvement, zero compliance findings. Full DMAIC case study in the Projects &amp; Tools section below.</div></div></div>
         <div class="csmets">
           <div class="csm"><div class="csmn">+15%</div><div class="csmlb">Admissions increase</div></div>
           <div class="csm"><div class="csmn">+30 days</div><div class="csmlb">Client retention</div></div>
@@ -518,12 +510,9 @@ footer{border-top:1px solid var(--b0);padding:22px 0}
       </div>
 
       <div class="csc f">
-        <div class="csh">
-          <div><div class="csnum">PROJECT 02</div><div class="cstitle">Virtual Program Launch &amp; COVID-19 Services Manual</div><div class="csorg">Long-Term Care · Crisis Operations</div></div>
-          <span class="csper">Q1 2020 – Q4 2021</span>
-        </div>
+        <div class="csh"><div><div class="csnum">PROJECT 02</div><div class="cstitle">Virtual Program Launch &amp; COVID-19 Services Manual</div><div class="csorg">Long-Term Care · Crisis Operations</div></div><span class="csper">Q1 2020 – Q4 2021</span></div>
         <div class="csbody">
-          <div class="cscol"><div class="csclbl">Business Problem</div><div class="csctitle">Pandemic isolation. Zero remote infrastructure.</div><p class="csctext">A facility-wide lockdown left 20 residents with no programming, no family communication, and no structured routine.</p></div>
+          <div class="cscol"><div class="csclbl">Business Problem</div><div class="csctitle">Pandemic isolation. Zero remote infrastructure.</div><p class="csctext">A facility-wide lockdown left 20 residents with no programming, no family communication, and no structured routine. No virtual delivery model or operational documentation existed.</p></div>
           <div class="cscol"><div class="csclbl">Solution</div><div class="csctitle">Virtual framework + reusable standardized manual.</div><p class="csctext">Scoped and launched virtual programming across diverse ability levels. Established operational reporting workflows. Co-developed the COVID-19 Recreation Services Manual with a three-person team.</p></div>
         </div>
         <div class="csmeta">
@@ -544,421 +533,353 @@ footer{border-top:1px solid var(--b0);padding:22px 0}
   </div>
 </section>
 
-<!-- ─── PROJECTS & TOOLS (TABBED) ─── -->
+<!-- PROJECTS & TOOLS (TABBED) -->
 <section id="tools">
   <div class="wrap">
-    <div class="f"><span class="lbl">Projects &amp; Tools Built</span><h2>Interactive demos — live below.</h2><div class="rule"></div>
-      <p style="font-size:.84rem;color:var(--sub);max-width:580px;margin-bottom:24px">Built to demonstrate skills in practice. Click any tab to open the tool directly on this page — no links, no redirects.</p>
+    <div class="f"><span class="lbl">Projects &amp; Tools Built</span><h2>Everything live — click a tab below.</h2><div class="rule"></div>
+      <p style="font-size:.84rem;color:var(--sub);max-width:580px;margin-bottom:24px">Each tool is built directly into this page. Nothing to download or install — click any tab to use it.</p>
     </div>
 
-    <!-- TAB BUTTONS -->
     <div class="tool-tabs f">
-      <button class="ttab active" data-tab="dashboard" onclick="switchTab('dashboard')"><span class="ttab-icon">📊</span>KPI Dashboard</button>
-      <button class="ttab" data-tab="dmaic" onclick="switchTab('dmaic')"><span class="ttab-icon">📈</span>DMAIC Case Study</button>
-      <button class="ttab" data-tab="ai" onclick="switchTab('ai')"><span class="ttab-icon">🤖</span>AI Meeting Notes</button>
-      <button class="ttab" data-tab="templates" onclick="switchTab('templates')"><span class="ttab-icon">📋</span>PM Templates</button>
+      <button class="ttab active" data-tab="dash" onclick="switchTab('dash')">📊 KPI Dashboard</button>
+      <button class="ttab" data-tab="dmaic" onclick="switchTab('dmaic')">📈 DMAIC Case Study</button>
+      <button class="ttab" data-tab="ai" onclick="switchTab('ai')">🤖 AI Meeting Notes</button>
+      <button class="ttab" data-tab="tmpl" onclick="switchTab('tmpl')">📋 PM Templates</button>
     </div>
 
-    <!-- ── TAB 1: DASHBOARD ── -->
-    <div class="tpanel active" id="tab-dashboard">
-      <div class="dash-kpi-row">
-        <div class="dkpi" style="border-left-color:#10b981"><div class="dkpi-lbl">Compliance Rate</div><div class="dkpi-val" style="color:#10b981">100%</div><div class="dkpi-sub">▲ All-time clean record</div></div>
-        <div class="dkpi" style="border-left-color:#3b82f6"><div class="dkpi-lbl">Active Clients</div><div class="dkpi-val" style="color:#3b82f6">40</div><div class="dkpi-sub">▲ +43% vs program start</div></div>
-        <div class="dkpi" style="border-left-color:#f59e0b"><div class="dkpi-lbl">Admissions Growth</div><div class="dkpi-val" style="color:#f59e0b">+15%</div><div class="dkpi-sub">▲ Year-over-year</div></div>
-        <div class="dkpi" style="border-left-color:#8b5cf6"><div class="dkpi-lbl">Retention Gain</div><div class="dkpi-val" style="color:#8b5cf6">+30d</div><div class="dkpi-sub">▲ vs program baseline</div></div>
-        <div class="dkpi" style="border-left-color:#06b6d4"><div class="dkpi-lbl">Engagement Score</div><div class="dkpi-val" style="color:#06b6d4">89</div><div class="dkpi-sub">▲ +17pts since launch</div></div>
+    <!-- ── DASHBOARD ── -->
+    <div class="tpanel active" id="tab-dash">
+      <div class="dkpi-row">
+        <div class="dkpi" style="border-left-color:#10b981"><div class="dkpi-l">Compliance Rate</div><div class="dkpi-v" style="color:#10b981">100%</div><div class="dkpi-s">▲ All-time clean record</div></div>
+        <div class="dkpi" style="border-left-color:#3b82f6"><div class="dkpi-l">Active Clients</div><div class="dkpi-v" style="color:#3b82f6">40</div><div class="dkpi-s">▲ +43% vs program start</div></div>
+        <div class="dkpi" style="border-left-color:#f59e0b"><div class="dkpi-l">Admissions Growth</div><div class="dkpi-v" style="color:#f59e0b">+15%</div><div class="dkpi-s">▲ Year-over-year</div></div>
+        <div class="dkpi" style="border-left-color:#8b5cf6"><div class="dkpi-l">Retention Gain</div><div class="dkpi-v" style="color:#8b5cf6">+30d</div><div class="dkpi-s">▲ vs program baseline</div></div>
+        <div class="dkpi" style="border-left-color:#06b6d4"><div class="dkpi-l">Engagement Score</div><div class="dkpi-v" style="color:#06b6d4">89</div><div class="dkpi-s">▲ +17pts since launch</div></div>
       </div>
-      <div class="dash-charts">
-        <div class="chart-panel">
-          <div class="chart-title">Monthly Client Admissions — Jan 2022 through Dec 2023</div>
-          <div class="chart-sub">Active clients served per month · Integrative Recovery vs Residential Youth</div>
-          <div class="ch"><canvas id="chartAdmissions"></canvas></div>
-          <div class="legend">
-            <span class="leg"><span class="leg-dot" style="background:#3b82f6"></span>Integrative Recovery</span>
-            <span class="leg"><span class="leg-dot" style="background:#f59e0b"></span>Residential Youth (launched 2023)</span>
-          </div>
-        </div>
-        <div class="chart-panel">
-          <div class="chart-title">Treatment Track Distribution</div>
-          <div class="chart-sub">Client breakdown by program track</div>
-          <div class="ch"><canvas id="chartDonut"></canvas></div>
-        </div>
+      <div class="dcharts">
+        <div class="chart-box"><h4>Monthly Client Admissions</h4><p>Jan 2022 – Dec 2023 · Integrative Recovery vs Residential Youth</p><div class="ch"><canvas id="cAdm"></canvas></div><div class="leg"><span class="leg-i"><span class="leg-d" style="background:#3b82f6"></span>Integrative Recovery</span><span class="leg-i"><span class="leg-d" style="background:#f59e0b"></span>Residential Youth</span></div></div>
+        <div class="chart-box"><h4>Treatment Track Distribution</h4><p>Client breakdown by program track</p><div class="ch"><canvas id="cDonut"></canvas></div></div>
       </div>
-      <div class="dash-charts">
-        <div class="chart-panel">
-          <div class="chart-title">Engagement Score &amp; Scheduling Efficiency — 2022–2023</div>
-          <div class="chart-sub">Monthly trend across both programs</div>
-          <div class="ch"><canvas id="chartTrend"></canvas></div>
-          <div class="legend">
-            <span class="leg"><span class="leg-dot" style="background:#f59e0b"></span>Engagement Score (0–100)</span>
-            <span class="leg"><span class="leg-dot" style="background:#3b82f6"></span>Scheduling Efficiency (%)</span>
-          </div>
-        </div>
-        <div class="chart-panel">
-          <div class="chart-title">Staff Utilization by Department</div>
-          <div class="chart-sub">Average rate across program tenure</div>
-          <div class="ch"><canvas id="chartUtil"></canvas></div>
-        </div>
+      <div class="dcharts">
+        <div class="chart-box"><h4>Engagement &amp; Scheduling Efficiency Trend</h4><p>Monthly scores 2022–2023</p><div class="ch"><canvas id="cTrend"></canvas></div><div class="leg"><span class="leg-i"><span class="leg-d" style="background:#f59e0b"></span>Engagement (0–100)</span><span class="leg-i"><span class="leg-d" style="background:#3b82f6"></span>Scheduling Efficiency (%)</span></div></div>
+        <div class="chart-box"><h4>Staff Utilization by Department</h4><p>Average rate across program tenure</p><div class="ch"><canvas id="cUtil"></canvas></div></div>
       </div>
-      <div class="dash-bottom">
-        <div class="chart-panel">
-          <div class="chart-title">Compliance Audit Summary</div>
-          <table class="comp-table" style="margin-top:8px">
+      <div class="dcharts">
+        <div class="chart-box"><h4>Compliance Audit Summary</h4>
+          <table class="comp-tbl" style="margin-top:8px">
             <thead><tr><th>Program</th><th>Period</th><th>Compliance</th><th>Findings</th><th>Status</th></tr></thead>
             <tbody>
-              <tr><td>Integrative Recovery</td><td>Q1–Q4 2022</td><td>100%</td><td>0</td><td><span class="cbadge">Clean</span></td></tr>
-              <tr><td>Integrative Recovery</td><td>Q1–Q4 2023</td><td>100%</td><td>0</td><td><span class="cbadge">Clean</span></td></tr>
-              <tr><td>Residential Youth</td><td>Q1–Q4 2023</td><td>100%</td><td>0</td><td><span class="cbadge">Clean</span></td></tr>
-              <tr style="font-weight:500;color:var(--txt)"><td>All Programs — Total</td><td>2020–2024</td><td>100%</td><td>0</td><td><span class="cbadge">Perfect</span></td></tr>
+              <tr><td>Integrative Recovery</td><td>2022</td><td>100%</td><td>0</td><td><span class="cbadge">Clean</span></td></tr>
+              <tr><td>Integrative Recovery</td><td>2023</td><td>100%</td><td>0</td><td><span class="cbadge">Clean</span></td></tr>
+              <tr><td>Residential Youth</td><td>2023</td><td>100%</td><td>0</td><td><span class="cbadge">Clean</span></td></tr>
+              <tr style="color:var(--txt);font-weight:500"><td>All Programs — Total</td><td>2020–2024</td><td>100%</td><td>0</td><td><span class="cbadge">Perfect</span></td></tr>
             </tbody>
           </table>
         </div>
-        <div class="chart-panel">
-          <div class="chart-title">Client Retention Improvement — Quarterly</div>
-          <div class="ch-sm"><canvas id="chartRetention"></canvas></div>
-        </div>
+        <div class="chart-box"><h4>Client Retention Improvement</h4><p>Days gained above baseline — quarterly</p><div class="ch-sm"><canvas id="cRet"></canvas></div></div>
       </div>
     </div>
 
-    <!-- ── TAB 2: DMAIC ── -->
+    <!-- ── DMAIC ── -->
     <div class="tpanel" id="tab-dmaic">
-      <!-- Phase nav -->
-      <div class="dmaic-phases">
-        <div class="dmaic-phase dp-active" style="background:#1e3a5f;border-color:#3b82f6" onclick="switchPhase('D')">
-          <div class="dp-letter" style="color:#3b82f6">D</div><div class="dp-name" style="color:#3b82f6">Define</div>
-        </div>
-        <div class="dmaic-phase" onclick="switchPhase('M')" id="ph-M">
-          <div class="dp-letter" style="color:var(--dim)">M</div><div class="dp-name" style="color:var(--dim)">Measure</div>
-        </div>
-        <div class="dmaic-phase" onclick="switchPhase('A')" id="ph-A">
-          <div class="dp-letter" style="color:var(--dim)">A</div><div class="dp-name" style="color:var(--dim)">Analyze</div>
-        </div>
-        <div class="dmaic-phase" onclick="switchPhase('I')" id="ph-I">
-          <div class="dp-letter" style="color:var(--dim)">I</div><div class="dp-name" style="color:var(--dim)">Improve</div>
-        </div>
-        <div class="dmaic-phase" onclick="switchPhase('C')" id="ph-C">
-          <div class="dp-letter" style="color:var(--dim)">C</div><div class="dp-name" style="color:var(--dim)">Control</div>
-        </div>
+      <div class="d-phases">
+        <div class="d-phase" id="ph-D" style="background:#1e3a5f;border-color:#3b82f6" onclick="switchPhase('D')"><div class="dph-l" style="color:#3b82f6">D</div><div class="dph-n" style="color:#3b82f6">Define</div></div>
+        <div class="d-phase" id="ph-M" onclick="switchPhase('M')"><div class="dph-l" style="color:var(--dim)">M</div><div class="dph-n" style="color:var(--dim)">Measure</div></div>
+        <div class="d-phase" id="ph-A" onclick="switchPhase('A')"><div class="dph-l" style="color:var(--dim)">A</div><div class="dph-n" style="color:var(--dim)">Analyze</div></div>
+        <div class="d-phase" id="ph-I" onclick="switchPhase('I')"><div class="dph-l" style="color:var(--dim)">I</div><div class="dph-n" style="color:var(--dim)">Improve</div></div>
+        <div class="d-phase" id="ph-C" onclick="switchPhase('C')"><div class="dph-l" style="color:var(--dim)">C</div><div class="dph-n" style="color:var(--dim)">Control</div></div>
       </div>
-
-      <!-- D - DEFINE -->
-      <div class="dmaic-content dc-active" id="dc-D">
+      <div class="d-content on" id="dc-D">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
-          <div class="dmaic-box">
-            <h4>Problem Statement</h4>
-            <p>Behavioral health program operations at Mountain Springs Recovery lacked centralized scheduling, compliance tracking, and KPI reporting infrastructure. Scheduling conflicts occurred in 28% of planned sessions, documentation compliance sat at 94%, and leadership reporting required 3–4 hours of manual work weekly. No data-driven decision-making framework existed.</p>
-          </div>
-          <div class="dmaic-box">
-            <h4>Goal Statement</h4>
-            <p>Reduce scheduling conflict rate by ≥15 percentage points, achieve 100% documentation compliance, increase monthly admissions by ≥10%, and reduce weekly reporting time by ≥50% — within a 6-month implementation window using Lean Six Sigma DMAIC methodology.</p>
-          </div>
+          <div class="d-box"><h4>Problem Statement</h4><p>Behavioral health program operations lacked centralized scheduling, compliance tracking, and KPI reporting. Scheduling conflicts occurred in 28% of planned sessions, documentation compliance sat at 94%, and leadership reporting required 3–4 hours of manual work weekly.</p></div>
+          <div class="d-box"><h4>Goal Statement</h4><p>Reduce scheduling conflict rate by ≥15 percentage points, achieve 100% documentation compliance, increase monthly admissions by ≥10%, and reduce weekly reporting time by ≥50% — within a 6-month implementation window using Lean Six Sigma DMAIC.</p></div>
         </div>
-        <div class="dmaic-box">
-          <h4>SIPOC Diagram — Integrative Recovery Program</h4>
-          <table class="dmaic-table" style="margin-top:8px">
-            <thead><tr><th>Suppliers</th><th>Inputs</th><th>Process</th><th>Outputs</th><th>Customers</th></tr></thead>
-            <tbody>
-              <tr><td>Clinical Staff</td><td>Client Referrals</td><td>Program Intake &amp; Scheduling</td><td>Treatment Sessions</td><td>Clients (40 active)</td></tr>
-              <tr><td>Operations Team</td><td>Staff Schedules</td><td>Service Delivery</td><td>Compliance Reports</td><td>Clinical Leadership</td></tr>
-              <tr><td>Admin Department</td><td>Treatment Plans</td><td>EMR Documentation</td><td>KPI Dashboards</td><td>Compliance Officers</td></tr>
-              <tr><td>External Providers</td><td>Compliance Standards</td><td>Performance Reporting</td><td>Leadership Updates</td><td>Families &amp; Providers</td></tr>
-              <tr><td>EMR System</td><td>Regulatory Requirements</td><td>Continuous Improvement</td><td>Process Improvements</td><td>Organization</td></tr>
-            </tbody>
-          </table>
+        <div class="d-box"><h4>SIPOC Diagram</h4>
+          <table class="d-tbl"><thead><tr><th>Suppliers</th><th>Inputs</th><th>Process</th><th>Outputs</th><th>Customers</th></tr></thead>
+          <tbody>
+            <tr><td>Clinical Staff</td><td>Client Referrals</td><td>Intake &amp; Scheduling</td><td>Treatment Sessions</td><td>Clients (40 active)</td></tr>
+            <tr><td>Operations Team</td><td>Staff Schedules</td><td>Service Delivery</td><td>Compliance Reports</td><td>Clinical Leadership</td></tr>
+            <tr><td>Admin Department</td><td>Treatment Plans</td><td>EMR Documentation</td><td>KPI Dashboards</td><td>Compliance Officers</td></tr>
+            <tr><td>External Providers</td><td>Compliance Standards</td><td>Performance Reporting</td><td>Leadership Updates</td><td>Families &amp; Providers</td></tr>
+            <tr><td>EMR System</td><td>Regulatory Requirements</td><td>Continuous Improvement</td><td>Process Improvements</td><td>Organization</td></tr>
+          </tbody></table>
         </div>
       </div>
-
-      <!-- M - MEASURE -->
-      <div class="dmaic-content" id="dc-M">
-        <div class="dmaic-box" style="margin-bottom:12px">
-          <h4>Baseline Metrics — Pre-Improvement State (Q1 2022)</h4>
-          <table class="dmaic-table" style="margin-top:8px">
-            <thead><tr><th>Metric</th><th>Baseline Value</th><th>Target</th><th>Data Source</th><th>Collection Method</th></tr></thead>
-            <tbody>
-              <tr><td>Scheduling Conflict Rate</td><td style="color:#ef4444">28%</td><td>≤13%</td><td>Calendar system</td><td>Weekly audit</td></tr>
-              <tr><td>Documentation Compliance</td><td style="color:#f59e0b">94%</td><td>100%</td><td>EMR system</td><td>Weekly EMR audit</td></tr>
-              <tr><td>Monthly Admissions (avg)</td><td style="color:#f59e0b">28 clients</td><td>≥34</td><td>Intake records</td><td>Monthly count</td></tr>
-              <tr><td>Client Retention (avg days)</td><td style="color:var(--sub)">Baseline</td><td>+30 days</td><td>Discharge records</td><td>Monthly calculation</td></tr>
-              <tr><td>Weekly Reporting Time</td><td style="color:#ef4444">3–4 hours</td><td>≤1.5 hours</td><td>Staff time logs</td><td>Time study</td></tr>
-              <tr><td>Staff Utilization Rate</td><td style="color:#f59e0b">73%</td><td>≥85%</td><td>Schedule system</td><td>Weekly calculation</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="dmaic-box">
-          <h4>Key Process Indicators</h4>
-          <p style="margin-bottom:12px">Three primary metrics selected for process capability analysis based on leadership priority and data availability:</p>
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
-            <div style="background:var(--bg2);border:1px solid var(--b0);border-radius:var(--r);padding:14px;text-align:center">
-              <div style="font-size:1.4rem;font-weight:700;color:#ef4444">28%</div>
-              <div style="font-size:.72rem;color:var(--sub);margin-top:4px">Scheduling conflict rate<br><em>Primary KPI</em></div>
-            </div>
-            <div style="background:var(--bg2);border:1px solid var(--b0);border-radius:var(--r);padding:14px;text-align:center">
-              <div style="font-size:1.4rem;font-weight:700;color:#f59e0b">94%</div>
-              <div style="font-size:.72rem;color:var(--sub);margin-top:4px">Documentation compliance<br><em>Regulatory KPI</em></div>
-            </div>
-            <div style="background:var(--bg2);border:1px solid var(--b0);border-radius:var(--r);padding:14px;text-align:center">
-              <div style="font-size:1.4rem;font-weight:700;color:#f59e0b">28</div>
-              <div style="font-size:.72rem;color:var(--sub);margin-top:4px">Monthly admissions avg<br><em>Growth KPI</em></div>
-            </div>
-          </div>
+      <div class="d-content" id="dc-M">
+        <div class="d-box" style="margin-bottom:12px"><h4>Baseline Metrics — Pre-Improvement State (Q1 2022)</h4>
+          <table class="d-tbl"><thead><tr><th>Metric</th><th>Baseline</th><th>Target</th><th>Data Source</th></tr></thead>
+          <tbody>
+            <tr><td>Scheduling Conflict Rate</td><td style="color:#ef4444;font-weight:600">28%</td><td>≤13%</td><td>Calendar system / weekly audit</td></tr>
+            <tr><td>Documentation Compliance</td><td style="color:#f59e0b;font-weight:600">94%</td><td>100%</td><td>EMR system / weekly audit</td></tr>
+            <tr><td>Monthly Admissions (avg)</td><td style="color:#f59e0b;font-weight:600">28 clients</td><td>≥34</td><td>Intake records / monthly count</td></tr>
+            <tr><td>Client Retention</td><td style="color:var(--sub)">Baseline</td><td>+30 days</td><td>Discharge records</td></tr>
+            <tr><td>Weekly Reporting Time</td><td style="color:#ef4444;font-weight:600">3–4 hours</td><td>≤1.5 hours</td><td>Staff time logs / time study</td></tr>
+            <tr><td>Staff Utilization Rate</td><td style="color:#f59e0b;font-weight:600">73%</td><td>≥85%</td><td>Schedule system</td></tr>
+          </tbody></table>
         </div>
       </div>
-
-      <!-- A - ANALYZE -->
-      <div class="dmaic-content" id="dc-A">
-        <div class="dmaic-box" style="margin-bottom:12px">
-          <h4>Root Cause Analysis — Fishbone (Ishikawa) Diagram</h4>
-          <p style="margin-bottom:14px;font-size:.82rem;color:var(--sub)">Effect: Scheduling conflicts and compliance documentation gaps across program operations</p>
+      <div class="d-content" id="dc-A">
+        <div class="d-box" style="margin-bottom:12px"><h4>Root Cause Analysis — Fishbone Diagram</h4><p style="margin-bottom:14px;font-size:.82rem;color:var(--sub)">Effect: Scheduling conflicts and compliance documentation gaps across program operations</p>
           <div class="fb-grid">
-            <div class="fb-cell">
-              <div class="fb-cell-title" style="color:#8b5cf6">👤 People</div>
-              <div class="fb-cause">Unclear role boundaries between clinical and operations staff</div>
-              <div class="fb-cause">Ad-hoc handoffs with no standardized communication format</div>
-              <div class="fb-cause">High staff turnover creating recurring knowledge gaps</div>
-            </div>
-            <div class="fb-cell">
-              <div class="fb-cell-title" style="color:#3b82f6">⚙️ Process</div>
-              <div class="fb-cause">No documented scheduling SOPs or escalation procedures</div>
-              <div class="fb-cause">Inconsistent weekly meeting cadence across departments</div>
-              <div class="fb-cause">No standardized handoff protocol between shifts</div>
-            </div>
-            <div class="fb-cell">
-              <div class="fb-cell-title" style="color:#10b981">💻 Systems</div>
-              <div class="fb-cause">Scheduling and EMR systems were completely disconnected</div>
-              <div class="fb-cause">No centralized reporting dashboard for leadership visibility</div>
-              <div class="fb-cause">Manual data entry duplicated across 3 separate platforms</div>
-            </div>
-            <div class="fb-cell">
-              <div class="fb-cell-title" style="color:#f59e0b">📊 Data &amp; Reporting</div>
-              <div class="fb-cause">No established KPI baselines or performance benchmarks</div>
-              <div class="fb-cause">Manual report generation consuming 3–4 hours weekly</div>
-              <div class="fb-cause">Leadership decisions made without real-time data access</div>
-            </div>
+            <div class="fb-cell"><div class="fb-ct" style="color:#8b5cf6">👤 People</div><div class="fb-c">Unclear role boundaries between clinical and operations staff</div><div class="fb-c">Ad-hoc handoffs with no standardized communication format</div><div class="fb-c">High staff turnover creating recurring knowledge gaps</div></div>
+            <div class="fb-cell"><div class="fb-ct" style="color:#3b82f6">⚙️ Process</div><div class="fb-c">No documented scheduling SOPs or escalation procedures</div><div class="fb-c">Inconsistent weekly meeting cadence across departments</div><div class="fb-c">No standardized handoff protocol between shifts</div></div>
+            <div class="fb-cell"><div class="fb-ct" style="color:#10b981">💻 Systems</div><div class="fb-c">Scheduling and EMR systems completely disconnected</div><div class="fb-c">No centralized reporting dashboard for leadership</div><div class="fb-c">Manual data entry duplicated across 3 platforms</div></div>
+            <div class="fb-cell"><div class="fb-ct" style="color:#f59e0b">📊 Data &amp; Reporting</div><div class="fb-c">No established KPI baselines or performance benchmarks</div><div class="fb-c">Manual reporting consuming 3–4 hours weekly</div><div class="fb-c">Leadership decisions made without real-time data</div></div>
           </div>
         </div>
-        <div class="dmaic-box">
-          <h4>Validated Root Causes (Prioritized by Impact × Frequency)</h4>
-          <table class="dmaic-table" style="margin-top:8px">
-            <thead><tr><th>Root Cause</th><th>Category</th><th>Frequency</th><th>Impact</th><th>Priority</th></tr></thead>
-            <tbody>
-              <tr><td>No centralized scheduling and EMR integration</td><td>Systems</td><td>Daily</td><td>High</td><td style="color:#ef4444;font-weight:500">Critical</td></tr>
-              <tr><td>No documented scheduling SOPs</td><td>Process</td><td>Weekly</td><td>High</td><td style="color:#ef4444;font-weight:500">Critical</td></tr>
-              <tr><td>Manual reporting — no dashboard infrastructure</td><td>Data</td><td>Weekly</td><td>High</td><td style="color:#ef4444;font-weight:500">Critical</td></tr>
-              <tr><td>Unclear role and handoff accountability</td><td>People</td><td>Daily</td><td>Medium</td><td style="color:#f59e0b;font-weight:500">High</td></tr>
-              <tr><td>No formal meeting cadence or dependency tracking</td><td>Process</td><td>Weekly</td><td>Medium</td><td style="color:#f59e0b;font-weight:500">High</td></tr>
-            </tbody>
-          </table>
+        <div class="d-box"><h4>Validated Root Causes — Prioritized</h4>
+          <table class="d-tbl"><thead><tr><th>Root Cause</th><th>Category</th><th>Frequency</th><th>Impact</th><th>Priority</th></tr></thead>
+          <tbody>
+            <tr><td>No centralized scheduling + EMR integration</td><td>Systems</td><td>Daily</td><td>High</td><td style="color:#ef4444;font-weight:600">Critical</td></tr>
+            <tr><td>No documented scheduling SOPs</td><td>Process</td><td>Weekly</td><td>High</td><td style="color:#ef4444;font-weight:600">Critical</td></tr>
+            <tr><td>Manual reporting — no dashboard</td><td>Data</td><td>Weekly</td><td>High</td><td style="color:#ef4444;font-weight:600">Critical</td></tr>
+            <tr><td>Unclear role and handoff accountability</td><td>People</td><td>Daily</td><td>Medium</td><td style="color:#f59e0b;font-weight:600">High</td></tr>
+            <tr><td>No formal meeting cadence</td><td>Process</td><td>Weekly</td><td>Medium</td><td style="color:#f59e0b;font-weight:600">High</td></tr>
+          </tbody></table>
         </div>
       </div>
-
-      <!-- I - IMPROVE -->
-      <div class="dmaic-content" id="dc-I">
-        <div class="dmaic-box" style="margin-bottom:12px">
-          <h4>Solutions Implemented</h4>
-        </div>
-        <div class="dmaic-steps">
-          <div class="dmaic-step">
-            <div class="step-num">1</div>
-            <div><div class="step-title">Power BI Operations Dashboard</div><div class="step-desc">Built a centralized Power BI dashboard consolidating scheduling efficiency, compliance rates, engagement trends, staff utilization, and admissions data into a single weekly executive reporting view. Reduced manual reporting from 3–4 hours to under 30 minutes.</div></div>
-          </div>
-          <div class="dmaic-step">
-            <div class="step-num">2</div>
-            <div><div class="step-title">Standardized Meeting Cadence &amp; Dependency Framework</div><div class="step-desc">Implemented a structured weekly meeting schedule across clinical, operations, and administrative departments with pre-defined agenda templates, dependency tracking, and 48-hour conflict resolution protocols. Reduced scheduling conflicts from 28% to 13%.</div></div>
-          </div>
-          <div class="dmaic-step">
-            <div class="step-num">3</div>
-            <div><div class="step-title">EMR Documentation Protocol</div><div class="step-desc">Created standardized documentation checklists, real-time audit triggers, and weekly compliance reviews integrated into staff workflows. Achieved 100% documentation compliance within 60 days of implementation.</div></div>
-          </div>
-          <div class="dmaic-step">
-            <div class="step-num">4</div>
-            <div><div class="step-title">Evidence-Based Curriculum Standardization (3 Tracks)</div><div class="step-desc">Applied Six Sigma DMAIC to develop standardized curricula across three treatment tracks, reducing process variation and enabling consistent, measurable client outcomes. Contributed to 15% admissions increase and 30-day retention improvement.</div></div>
-          </div>
-          <div class="dmaic-step">
-            <div class="step-num">5</div>
-            <div><div class="step-title">Cross-Department Communication Framework</div><div class="step-desc">Established documented handoff protocols, RACI matrix, and stakeholder communication standards across clinical, operations, and administrative departments — eliminating ambiguity in role ownership and escalation paths.</div></div>
-          </div>
+      <div class="d-content" id="dc-I">
+        <div class="d-box" style="margin-bottom:12px"><h4>Solutions Implemented</h4></div>
+        <div class="d-steps">
+          <div class="d-step"><div class="snum">1</div><div><div class="st">Power BI Operations Dashboard</div><div class="sd">Built centralized Power BI dashboard consolidating scheduling efficiency, compliance rates, engagement trends, staff utilization, and admissions data. Reduced manual reporting from 3–4 hours to under 30 minutes.</div></div></div>
+          <div class="d-step"><div class="snum">2</div><div><div class="st">Standardized Meeting Cadence &amp; Dependency Framework</div><div class="sd">Implemented structured weekly meetings across departments with pre-defined agenda templates, dependency tracking, and 48-hour conflict resolution protocols. Reduced scheduling conflicts from 28% to 13%.</div></div></div>
+          <div class="d-step"><div class="snum">3</div><div><div class="st">EMR Documentation Protocol</div><div class="sd">Created standardized checklists, real-time audit triggers, and weekly compliance reviews integrated into staff workflows. Achieved 100% documentation compliance within 60 days.</div></div></div>
+          <div class="d-step"><div class="snum">4</div><div><div class="st">Evidence-Based Curriculum Standardization (3 Tracks)</div><div class="sd">Applied DMAIC to develop standardized curricula across three treatment tracks, reducing process variation and enabling consistent, measurable outcomes. Contributed to 15% admissions increase.</div></div></div>
+          <div class="d-step"><div class="snum">5</div><div><div class="st">Cross-Department Communication Framework</div><div class="sd">Established documented handoff protocols, RACI matrix, and stakeholder communication standards — eliminating ambiguity in role ownership and escalation paths.</div></div></div>
         </div>
       </div>
-
-      <!-- C - CONTROL -->
-      <div class="dmaic-content" id="dc-C">
-        <div class="dmaic-box" style="margin-bottom:16px">
-          <h4>Before vs. After — Measured Results</h4>
-          <div class="dmaic-metrics" style="margin-top:12px">
-            <div class="dm-card">
-              <div class="dm-before">Scheduling Conflicts</div>
-              <div class="dm-val-row"><span class="dm-b">28%</span><span class="dm-arrow">→</span><span class="dm-a">13%</span></div>
-              <div class="dm-lbl">−15 percentage points</div>
-            </div>
-            <div class="dm-card">
-              <div class="dm-before">Documentation Compliance</div>
-              <div class="dm-val-row"><span class="dm-b">94%</span><span class="dm-arrow">→</span><span class="dm-a">100%</span></div>
-              <div class="dm-lbl">Zero findings achieved</div>
-            </div>
-            <div class="dm-card">
-              <div class="dm-before">Monthly Admissions</div>
-              <div class="dm-val-row"><span class="dm-b">28</span><span class="dm-arrow">→</span><span class="dm-a">40</span></div>
-              <div class="dm-lbl">+43% total increase</div>
-            </div>
-            <div class="dm-card">
-              <div class="dm-before">Report Generation</div>
-              <div class="dm-val-row"><span class="dm-b">4hr</span><span class="dm-arrow">→</span><span class="dm-a">30m</span></div>
-              <div class="dm-lbl">87% time reduction</div>
-            </div>
+      <div class="d-content" id="dc-C">
+        <div class="d-box" style="margin-bottom:16px"><h4>Before vs. After — Measured Results</h4>
+          <div class="d-metrics" style="margin-top:12px">
+            <div class="dm"><div style="font-size:.68rem;color:var(--dim);margin-bottom:6px">Scheduling Conflicts</div><div style="display:flex;align-items:center;justify-content:center;gap:6px"><span class="dm-b">28%</span><span class="dm-arr">→</span><span class="dm-a">13%</span></div><div class="dm-l">−15 percentage points</div></div>
+            <div class="dm"><div style="font-size:.68rem;color:var(--dim);margin-bottom:6px">Documentation Compliance</div><div style="display:flex;align-items:center;justify-content:center;gap:6px"><span class="dm-b">94%</span><span class="dm-arr">→</span><span class="dm-a">100%</span></div><div class="dm-l">Zero findings achieved</div></div>
+            <div class="dm"><div style="font-size:.68rem;color:var(--dim);margin-bottom:6px">Monthly Admissions</div><div style="display:flex;align-items:center;justify-content:center;gap:6px"><span class="dm-b">28</span><span class="dm-arr">→</span><span class="dm-a">40</span></div><div class="dm-l">+43% total increase</div></div>
+            <div class="dm"><div style="font-size:.68rem;color:var(--dim);margin-bottom:6px">Report Generation</div><div style="display:flex;align-items:center;justify-content:center;gap:6px"><span class="dm-b">4hr</span><span class="dm-arr">→</span><span class="dm-a">30m</span></div><div class="dm-l">87% time reduction</div></div>
           </div>
         </div>
-        <div class="dmaic-box" style="margin-bottom:12px">
-          <h4>Control Plan of Sustaining the Gains</h4>
-          <table class="dmaic-table" style="margin-top:8px">
-            <thead><tr><th>Metric</th><th>Target</th><th>Monitor How</th><th>Frequency</th><th>Owner</th></tr></thead>
-            <tbody>
-              <tr><td>Scheduling Conflict Rate</td><td>≤13%</td><td>Power BI dashboard</td><td>Weekly</td><td>Program Manager</td></tr>
-              <tr><td>Documentation Compliance</td><td>100%</td><td>EMR audit reports</td><td>Weekly</td><td>Compliance Officer</td></tr>
-              <tr><td>Monthly Admissions</td><td>≥34</td><td>Intake tracking report</td><td>Monthly</td><td>Program Manager</td></tr>
-              <tr><td>Client Retention</td><td>≥+30 days</td><td>Discharge records</td><td>Monthly</td><td>Clinical Lead</td></tr>
-              <tr><td>Staff Utilization</td><td>≥85%</td><td>Power BI dashboard</td><td>Weekly</td><td>Operations Lead</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="dmaic-box">
-          <h4>Final Results Summary</h4>
-          <div class="result-metrics">
-            <div class="rm"><div class="rm-num">+15%</div><div class="rm-lbl">Admissions increase (year-over-year)</div></div>
-            <div class="rm"><div class="rm-num">+30 days</div><div class="rm-lbl">Average client retention improvement</div></div>
-            <div class="rm"><div class="rm-num" style="color:#3b82f6">0</div><div class="rm-lbl">Compliance findings across full tenure</div></div>
-            <div class="rm"><div class="rm-num">87%</div><div class="rm-lbl">Reduction in reporting time</div></div>
-            <div class="rm"><div class="rm-num">40</div><div class="rm-lbl">Active clients served at program peak</div></div>
+        <div class="d-box"><h4>Control Plan &amp; Final Results</h4>
+          <table class="d-tbl" style="margin-bottom:16px"><thead><tr><th>Metric</th><th>Target</th><th>Monitor Via</th><th>Frequency</th><th>Owner</th></tr></thead>
+          <tbody>
+            <tr><td>Scheduling Conflict Rate</td><td>≤13%</td><td>Power BI dashboard</td><td>Weekly</td><td>Program Manager</td></tr>
+            <tr><td>Documentation Compliance</td><td>100%</td><td>EMR audit reports</td><td>Weekly</td><td>Compliance Officer</td></tr>
+            <tr><td>Monthly Admissions</td><td>≥34</td><td>Intake tracking</td><td>Monthly</td><td>Program Manager</td></tr>
+            <tr><td>Client Retention</td><td>≥+30 days</td><td>Discharge records</td><td>Monthly</td><td>Clinical Lead</td></tr>
+          </tbody></table>
+          <div class="res-mets">
+            <div class="rm"><div class="rm-n">+15%</div><div class="rm-l">Admissions increase</div></div>
+            <div class="rm"><div class="rm-n">+30 days</div><div class="rm-l">Client retention gain</div></div>
+            <div class="rm"><div class="rm-n" style="color:#3b82f6">0</div><div class="rm-l">Compliance findings</div></div>
+            <div class="rm"><div class="rm-n">87%</div><div class="rm-l">Reporting time reduced</div></div>
+            <div class="rm"><div class="rm-n">40</div><div class="rm-l">Peak clients served</div></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ── TAB 3: AI MEETING NOTES ── -->
+    <!-- ── AI MEETING NOTES ── -->
     <div class="tpanel" id="tab-ai">
-      <div class="ai-tool">
-        <div class="ai-input-panel">
-          <div class="ai-panel-title">
-            Meeting Notes Input
-            <button class="ai-copy-btn" onclick="loadDemo()">Load Demo Notes</button>
-          </div>
-          <select class="ai-select" id="ai-meeting-type">
-            <option value="">Select meeting type...</option>
-            <option>Weekly Team Meeting</option>
-            <option>Supervision Session</option>
-            <option>Family Meeting</option>
-            <option>Care Coordination</option>
-            <option>Leadership / Admin</option>
-            <option>Project Kickoff</option>
-            <option>Stakeholder Update</option>
-          </select>
-          <textarea class="ai-textarea" id="ai-notes" placeholder="Paste your raw meeting notes here...
-
-Example:
-Meeting: Weekly Team Check-in
-Date: June 3, 2025
-Attendees: Kaylee, Sarah, Dr. Chen, Mike
-
-We discussed the accreditation review coming up next month..."></textarea>
-          <div class="ai-btns">
+      <div class="ai-wrap">
+        <div class="ai-panel">
+          <div class="ai-ptitle">Input Notes<button class="xcopy" onclick="loadDemo()">Load Demo</button></div>
+          <select class="ai-sel" id="ai-type"><option value="">Select meeting type...</option><option>Weekly Team Meeting</option><option>Supervision Session</option><option>Family Meeting</option><option>Care Coordination</option><option>Leadership / Admin</option><option>Project Kickoff</option><option>Stakeholder Update</option></select>
+          <textarea class="ai-ta" id="ai-notes" placeholder="Paste your raw meeting notes here...&#10;&#10;Tip: Click 'Load Demo' to see an example, then hit Process Notes."></textarea>
+          <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
             <button class="btn btn-blue btn-sm" onclick="processNotes()">🤖 Process Notes</button>
             <button class="btn btn-ghost btn-sm" onclick="clearAI()">Clear</button>
           </div>
-          <p style="font-size:.68rem;color:var(--dim);margin-top:10px">Extracts action items, decisions, attendees, and next steps from raw notes. Click "Load Demo Notes" to see an example.</p>
+          <p class="ai-hint">Extracts action items, decisions, attendees, and follow-ups from raw notes automatically.</p>
         </div>
-        <div class="ai-output-panel">
-          <div class="ai-panel-title">
-            Structured Output
-            <button class="ai-copy-btn" id="copy-btn" onclick="copyOutput()" style="display:none">Copy All</button>
-          </div>
-          <div class="ai-output" id="ai-output">
-            <div class="ai-placeholder">
-              <div class="ai-placeholder-icon">🤖</div>
-              <div>Paste meeting notes and click<br><strong style="color:var(--txt)">Process Notes</strong> to extract action items</div>
-            </div>
-          </div>
+        <div class="ai-panel">
+          <div class="ai-ptitle">Structured Output<button class="xcopy" id="copy-btn" onclick="copyOut()" style="display:none">Copy All</button></div>
+          <div class="ai-out" id="ai-out"><div class="ai-ph"><span style="font-size:2rem">🤖</span>Paste meeting notes and click<br><strong style="color:var(--txt)">Process Notes</strong></div></div>
         </div>
       </div>
     </div>
 
-    <!-- ── TAB 4: TEMPLATES ── -->
-    <div class="tpanel" id="tab-templates">
-      <div style="background:var(--bg0);border:1px solid var(--b0);border-radius:var(--r);padding:20px 24px;margin-bottom:18px">
-        <div style="font-size:.9rem;font-weight:600;margin-bottom:6px">Healthcare PM Template Library</div>
-        <p style="font-size:.82rem;color:var(--sub);line-height:1.7">Five professional Excel templates built for healthcare program management environments — developed from 5+ years of hands-on PM work in high-compliance settings. Download any template and customize for your project.</p>
+    <!-- ── TEMPLATES ── -->
+    <div class="tpanel" id="tab-tmpl">
+      <div style="background:var(--bg0);border:1px solid var(--b0);border-radius:var(--r);padding:16px 20px;margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">
+        <div><div style="font-size:.88rem;font-weight:600;margin-bottom:3px">Healthcare PM Template Library</div><p style="font-size:.78rem;color:var(--sub)">Select any template, fill in the editable fields, then click Print to save as PDF.</p></div>
+        <div style="font-size:.72rem;color:var(--dim);font-style:italic">Click any white field to edit · Use Print to save as PDF</div>
       </div>
-      <div class="tmpl-grid">
-        <a href="templates/01_Project_Charter.xlsx" download class="tmpl-card">
-          <div class="tmpl-icon">📄</div>
-          <div class="tmpl-name">Project Charter</div>
-          <div class="tmpl-desc">Scope, objectives, stakeholders, success metrics</div>
-          <div class="tmpl-dl"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2v8M5 7l3 3 3-3M2 13h12"/></svg>Download</div>
-        </a>
-        <a href="templates/02_Risk_Register.xlsx" download class="tmpl-card">
-          <div class="tmpl-icon">⚠️</div>
-          <div class="tmpl-name">Risk Register</div>
-          <div class="tmpl-desc">Color-coded severity levels, mitigation strategies</div>
-          <div class="tmpl-dl"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2v8M5 7l3 3 3-3M2 13h12"/></svg>Download</div>
-        </a>
-        <a href="templates/03_RACI_Matrix.xlsx" download class="tmpl-card">
-          <div class="tmpl-icon">👥</div>
-          <div class="tmpl-name">RACI Matrix</div>
-          <div class="tmpl-desc">Roles &amp; responsibilities across 15 PM tasks</div>
-          <div class="tmpl-dl"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2v8M5 7l3 3 3-3M2 13h12"/></svg>Download</div>
-        </a>
-        <a href="templates/04_Weekly_KPI_Tracker.xlsx" download class="tmpl-card">
-          <div class="tmpl-icon">📊</div>
-          <div class="tmpl-name">Weekly KPI Tracker</div>
-          <div class="tmpl-desc">Operational KPIs + historical log tab</div>
-          <div class="tmpl-dl"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2v8M5 7l3 3 3-3M2 13h12"/></svg>Download</div>
-        </a>
-        <a href="templates/05_DMAIC_Template.xlsx" download class="tmpl-card">
-          <div class="tmpl-icon">🔄</div>
-          <div class="tmpl-name">DMAIC Template</div>
-          <div class="tmpl-desc">All 5 phases + summary sheet, Six Sigma ready</div>
-          <div class="tmpl-dl"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2v8M5 7l3 3 3-3M2 13h12"/></svg>Download</div>
-        </a>
+      <div class="tmpl-tabs">
+        <button class="tmpl-tab active" onclick="switchTmpl('charter')">📄 Project Charter</button>
+        <button class="tmpl-tab" onclick="switchTmpl('risk')">⚠️ Risk Register</button>
+        <button class="tmpl-tab" onclick="switchTmpl('raci')">👥 RACI Matrix</button>
+        <button class="tmpl-tab" onclick="switchTmpl('kpi')">📊 KPI Tracker</button>
+        <button class="tmpl-tab" onclick="switchTmpl('dmaic-tmpl')">🔄 DMAIC Template</button>
       </div>
-    </div>
+
+      <!-- PROJECT CHARTER -->
+      <div class="tmpl-panel active" id="tmpl-charter">
+        <div class="sheet-bar"><div class="sheet-bar-l">Project Charter <span>Healthcare Operations &amp; Program Management · Kaylee Gassen</span></div><div class="sheet-bar-r"><button class="btn btn-ghost btn-xs" onclick="resetTmpl('charter')">Reset</button><button class="btn btn-blue btn-xs" onclick="printTmpl('charter','Project Charter')">🖨 Print / Save PDF</button></div></div>
+        <div id="sheet-charter"><table class="sht" width="100%">
+          <tr><td colspan="2" class="sh-section">PROJECT OVERVIEW</td></tr>
+          <tr><td class="shl">Project Name *</td><td><div class="shv" contenteditable="true" data-ph="Enter project name"></div></td></tr>
+          <tr><td class="shl">Project Manager</td><td><div class="shv">Kaylee Gassen</div></td></tr>
+          <tr><td class="shl">Sponsor / Executive</td><td><div class="shv" contenteditable="true" data-ph="Enter sponsor name and title"></div></td></tr>
+          <tr><td class="shl">Department / Program</td><td><div class="shv" contenteditable="true" data-ph="Healthcare Operations / Behavioral Health">Healthcare Operations / Behavioral Health</div></td></tr>
+          <tr><td class="shl">Start Date</td><td><div class="shv" contenteditable="true" data-ph="MM/DD/YYYY"></div></td></tr>
+          <tr><td class="shl">Target End Date</td><td><div class="shv" contenteditable="true" data-ph="MM/DD/YYYY"></div></td></tr>
+          <tr><td class="shl">Estimated Budget</td><td><div class="shv" contenteditable="true" data-ph="$0.00"></div></td></tr>
+          <tr><td class="shl">Priority Level</td><td><div class="shv" contenteditable="true" data-ph="High / Medium / Low"></div></td></tr>
+          <tr><td colspan="2" class="sh-section">PROBLEM STATEMENT &amp; OBJECTIVES</td></tr>
+          <tr><td class="shl">Problem Statement</td><td><div class="shv" contenteditable="true" data-ph="Describe the current-state problem this project addresses. Use data where possible." style="min-height:60px"></div></td></tr>
+          <tr><td class="shl">Project Objective</td><td><div class="shv" contenteditable="true" data-ph="Describe the measurable outcome this project will achieve." style="min-height:50px"></div></td></tr>
+          <tr><td class="shl">Success Metrics / KPIs</td><td><div class="shv" contenteditable="true" data-ph="List 3–5 measurable KPIs that define project success." style="min-height:50px"></div></td></tr>
+          <tr><td colspan="2" class="sh-section">SCOPE</td></tr>
+          <tr><td class="shl">In Scope</td><td><div class="shv" contenteditable="true" data-ph="List what IS included in this project." style="min-height:50px"></div></td></tr>
+          <tr><td class="shl">Out of Scope</td><td><div class="shv" contenteditable="true" data-ph="List what is explicitly NOT included." style="min-height:50px"></div></td></tr>
+          <tr><td class="shl">Key Assumptions</td><td><div class="shv" contenteditable="true" data-ph="List assumptions the project plan depends on."></div></td></tr>
+          <tr><td class="shl">Key Constraints</td><td><div class="shv" contenteditable="true" data-ph="Budget, timeline, resource, or regulatory constraints."></div></td></tr>
+          <tr><td colspan="2" class="sh-section">STAKEHOLDERS &amp; APPROVAL</td></tr>
+          <tr><td class="shl">Key Stakeholders</td><td><div class="shv" contenteditable="true" data-ph="Clinical Lead, Operations Director, Compliance Officer, HR">Clinical Lead, Operations Director, Compliance Officer, HR</div></td></tr>
+          <tr><td class="shl">Approved By</td><td><div class="shv" contenteditable="true" data-ph="Name / Title"></div></td></tr>
+          <tr><td class="shl">Approval Date</td><td><div class="shv" contenteditable="true" data-ph="MM/DD/YYYY"></div></td></tr>
+          <tr><td class="shl">Version</td><td><div class="shv" contenteditable="true">v1.0</div></td></tr>
+        </table></div>
+      </div>
+
+      <!-- RISK REGISTER -->
+      <div class="tmpl-panel" id="tmpl-risk">
+        <div class="sheet-bar"><div class="sheet-bar-l">Risk Register <span>Identify · Score · Mitigate · Track</span></div><div class="sheet-bar-r"><button class="btn btn-ghost btn-xs" onclick="resetTmpl('risk')">Reset</button><button class="btn btn-blue btn-xs" onclick="printTmpl('risk','Risk Register')">🖨 Print / Save PDF</button></div></div>
+        <div class="tbl-scroll" id="sheet-risk"><table class="sht" width="100%">
+          <thead><tr><th style="min-width:60px">Risk ID</th><th style="min-width:260px">Risk Description</th><th style="min-width:120px">Category</th><th style="min-width:90px">Likelihood<br><span style="font-weight:300;font-size:.58rem">(1–5)</span></th><th style="min-width:90px">Impact<br><span style="font-weight:300;font-size:.58rem">(1–5)</span></th><th style="min-width:70px">Score<br><span style="font-weight:300;font-size:.58rem">(L×I)</span></th><th style="min-width:80px">Level</th><th style="min-width:240px">Mitigation Strategy</th><th style="min-width:120px">Owner</th></tr></thead>
+          <tbody id="risk-body">
+            <tr><td class="shl sh-center">R-001</td><td><div class="shv" contenteditable="true">Staff turnover disrupts program continuity and scheduling</div></td><td><div class="shv" contenteditable="true">HR / People</div></td><td class="shv sh-center" contenteditable="true" oninput="calcScore(this)">3</td><td class="shv sh-center" contenteditable="true" oninput="calcScore(this)">4</td><td class="sh-score sc-high">12</td><td class="risk-H">HIGH</td><td><div class="shv" contenteditable="true">Cross-train 2+ staff per role; maintain documented SOPs</div></td><td><div class="shv" contenteditable="true">Program Manager</div></td></tr>
+            <tr><td class="shl sh-center">R-002</td><td><div class="shv" contenteditable="true">Regulatory changes impact documentation requirements</div></td><td><div class="shv" contenteditable="true">Compliance</div></td><td class="shv sh-center" contenteditable="true" oninput="calcScore(this)">2</td><td class="shv sh-center" contenteditable="true" oninput="calcScore(this)">5</td><td class="sh-score sc-high">10</td><td class="risk-H">HIGH</td><td><div class="shv" contenteditable="true">Monitor ASAM/state updates monthly; review compliance calendar</div></td><td><div class="shv" contenteditable="true">Compliance Officer</div></td></tr>
+            <tr><td class="shl sh-center">R-003</td><td><div class="shv" contenteditable="true">Budget variance exceeds 10% of program allocation</div></td><td><div class="shv" contenteditable="true">Financial</div></td><td class="shv sh-center" contenteditable="true" oninput="calcScore(this)">2</td><td class="shv sh-center" contenteditable="true" oninput="calcScore(this)">4</td><td class="sh-score sc-med">8</td><td class="risk-M">MEDIUM</td><td><div class="shv" contenteditable="true">Monthly budget reviews; escalate at 5% variance threshold</div></td><td><div class="shv" contenteditable="true">Operations Director</div></td></tr>
+            <tr><td class="shl sh-center">R-004</td><td><div class="shv" contenteditable="true">EMR system downtime disrupts case documentation</div></td><td><div class="shv" contenteditable="true">Technology</div></td><td class="shv sh-center" contenteditable="true" oninput="calcScore(this)">2</td><td class="shv sh-center" contenteditable="true" oninput="calcScore(this)">3</td><td class="sh-score sc-med">6</td><td class="risk-M">MEDIUM</td><td><div class="shv" contenteditable="true">Maintain paper backup protocol; IT escalation path documented</div></td><td><div class="shv" contenteditable="true">IT Lead</div></td></tr>
+            <tr><td class="shl sh-center">R-005</td><td><div class="shv" contenteditable="true">Client-to-staff ratio exceeds safe threshold</div></td><td><div class="shv" contenteditable="true">Operations</div></td><td class="shv sh-center" contenteditable="true" oninput="calcScore(this)">2</td><td class="shv sh-center" contenteditable="true" oninput="calcScore(this)">4</td><td class="sh-score sc-med">8</td><td class="risk-M">MEDIUM</td><td><div class="shv" contenteditable="true">Trigger alert at 90% capacity; pre-approved temp staff roster</div></td><td><div class="shv" contenteditable="true">Program Manager</div></td></tr>
+            <tr><td class="shl sh-center">R-006</td><td><div class="shv" contenteditable="true">External provider delays affect service delivery</div></td><td><div class="shv" contenteditable="true">Vendor</div></td><td class="shv sh-center" contenteditable="true" oninput="calcScore(this)">3</td><td class="shv sh-center" contenteditable="true" oninput="calcScore(this)">3</td><td class="sh-score sc-med">9</td><td class="risk-M">MEDIUM</td><td><div class="shv" contenteditable="true">Dual-vendor agreements; 30-day notice contract clause</div></td><td><div class="shv" contenteditable="true">Operations Director</div></td></tr>
+            <tr><td class="shl sh-center">R-007</td><td><div class="shv" contenteditable="true">Accreditation audit finds documentation gaps</div></td><td><div class="shv" contenteditable="true">Compliance</div></td><td class="shv sh-center" contenteditable="true" oninput="calcScore(this)">1</td><td class="shv sh-center" contenteditable="true" oninput="calcScore(this)">5</td><td class="sh-score sc-low">5</td><td class="risk-L">LOW-MED</td><td><div class="shv" contenteditable="true">Quarterly internal audits; real-time EMR compliance tracking</div></td><td><div class="shv" contenteditable="true">Compliance Officer</div></td></tr>
+            <tr><td class="shl sh-center">R-008</td><td><div class="shv" contenteditable="true">Stakeholder misalignment delays program decisions</div></td><td><div class="shv" contenteditable="true">Governance</div></td><td class="shv sh-center" contenteditable="true" oninput="calcScore(this)">2</td><td class="shv sh-center" contenteditable="true" oninput="calcScore(this)">3</td><td class="sh-score sc-med">6</td><td class="risk-M">MEDIUM</td><td><div class="shv" contenteditable="true">Weekly stakeholder updates; RACI matrix enforced</div></td><td><div class="shv" contenteditable="true">Program Manager</div></td></tr>
+            <tr><td class="shl sh-center" contenteditable="true">R-009</td><td><div class="shv" contenteditable="true" data-ph="Enter risk description"></div></td><td><div class="shv" contenteditable="true" data-ph="Category"></div></td><td class="shv sh-center" contenteditable="true" oninput="calcScore(this)" data-ph="1–5"></td><td class="shv sh-center" contenteditable="true" oninput="calcScore(this)" data-ph="1–5"></td><td class="sh-score">—</td><td class="shv" contenteditable="true" data-ph="Level"></td><td><div class="shv" contenteditable="true" data-ph="Mitigation strategy"></div></td><td><div class="shv" contenteditable="true" data-ph="Owner"></div></td></tr>
+          </tbody>
+        </table></div>
+        <div style="font-size:.72rem;color:var(--dim);margin-top:10px">Score = Likelihood × Impact · 1–4 = Low · 5–9 = Medium · 10–25 = High · Edit Likelihood/Impact cells to auto-update score</div>
+      </div>
+
+      <!-- RACI MATRIX -->
+      <div class="tmpl-panel" id="tmpl-raci">
+        <div class="sheet-bar"><div class="sheet-bar-l">RACI Matrix <span>R=Responsible · A=Accountable · C=Consulted · I=Informed</span></div><div class="sheet-bar-r"><button class="btn btn-ghost btn-xs" onclick="resetTmpl('raci')">Reset</button><button class="btn btn-blue btn-xs" onclick="printTmpl('raci','RACI Matrix')">🖨 Print / Save PDF</button></div></div>
+        <div class="tbl-scroll" id="sheet-raci"><table class="sht" width="100%">
+          <thead><tr><th style="min-width:220px">Task / Activity</th><th style="min-width:110px">Program<br>Manager</th><th style="min-width:100px">Clinical<br>Lead</th><th style="min-width:100px">Ops<br>Director</th><th style="min-width:110px">Compliance<br>Officer</th><th style="min-width:80px">HR</th><th style="min-width:100px">External<br>Providers</th><th style="min-width:90px">Exec<br>Sponsor</th></tr></thead>
+          <tbody>
+            <tr><td class="shl">Program Design &amp; Launch</td><td class="sh-R">R/A</td><td class="sh-C">C</td><td class="sh-C">C</td><td class="sh-I">I</td><td class="sh-I">I</td><td class="sh-I">I</td><td class="sh-I">I</td></tr>
+            <tr><td class="shl">Budget Planning &amp; Tracking</td><td class="sh-R">R</td><td class="sh-I">I</td><td class="sh-A">A</td><td class="sh-I">I</td><td class="sh-I">I</td><td class="sh-I">I</td><td class="sh-C">C</td></tr>
+            <tr><td class="shl">Staff Scheduling &amp; Coordination</td><td class="sh-R">R/A</td><td class="sh-C">C</td><td class="sh-C">C</td><td class="sh-I">I</td><td class="sh-I">I</td><td class="sh-I">I</td><td class="sh-I">I</td></tr>
+            <tr><td class="shl">KPI Dashboard Development</td><td class="sh-R">R/A</td><td class="sh-C">C</td><td class="sh-C">C</td><td class="sh-I">I</td><td class="sh-I">I</td><td class="sh-I">I</td><td class="sh-I">I</td></tr>
+            <tr><td class="shl">Weekly Multidisciplinary Meetings</td><td class="sh-R">R/A</td><td class="sh-R">R</td><td class="sh-C">C</td><td class="sh-I">I</td><td class="sh-I">I</td><td class="sh-C">C</td><td class="sh-I">I</td></tr>
+            <tr><td class="shl">EMR Documentation Compliance</td><td class="sh-R">R</td><td class="sh-R">R</td><td class="sh-C">C</td><td class="sh-A">A</td><td class="sh-I">I</td><td class="sh-I">I</td><td class="sh-I">I</td></tr>
+            <tr><td class="shl">Regulatory Audit Preparation</td><td class="sh-R">R</td><td class="sh-C">C</td><td class="sh-C">C</td><td class="sh-A">A</td><td class="sh-I">I</td><td class="sh-I">I</td><td class="sh-I">I</td></tr>
+            <tr><td class="shl">Staff Onboarding &amp; Training</td><td class="sh-R">R/A</td><td class="sh-C">C</td><td class="sh-C">C</td><td class="sh-I">I</td><td class="sh-R">R</td><td class="sh-I">I</td><td class="sh-I">I</td></tr>
+            <tr><td class="shl">Stakeholder Communication</td><td class="sh-R">R/A</td><td class="sh-C">C</td><td class="sh-C">C</td><td class="sh-I">I</td><td class="sh-I">I</td><td class="sh-C">C</td><td class="sh-I">I</td></tr>
+            <tr><td class="shl">Risk Identification &amp; Mitigation</td><td class="sh-R">R/A</td><td class="sh-C">C</td><td class="sh-C">C</td><td class="sh-C">C</td><td class="sh-I">I</td><td class="sh-I">I</td><td class="sh-I">I</td></tr>
+            <tr><td class="shl">Process Improvement (DMAIC)</td><td class="sh-R">R/A</td><td class="sh-C">C</td><td class="sh-C">C</td><td class="sh-I">I</td><td class="sh-I">I</td><td class="sh-I">I</td><td class="sh-C">C</td></tr>
+            <tr><td class="shl">External Provider Coordination</td><td class="sh-R">R/A</td><td class="sh-C">C</td><td class="sh-C">C</td><td class="sh-I">I</td><td class="sh-I">I</td><td class="sh-R">R</td><td class="sh-I">I</td></tr>
+            <tr><td class="shl">Leadership Reporting</td><td class="sh-R">R</td><td class="sh-I">I</td><td class="sh-C">C</td><td class="sh-I">I</td><td class="sh-I">I</td><td class="sh-I">I</td><td class="sh-A">A</td></tr>
+            <tr><td class="shl">Change Management</td><td class="sh-R">R/A</td><td class="sh-C">C</td><td class="sh-C">C</td><td class="sh-I">I</td><td class="sh-C">C</td><td class="sh-I">I</td><td class="sh-C">C</td></tr>
+            <tr><td class="shl">Program Evaluation &amp; Close-out</td><td class="sh-R">R/A</td><td class="sh-C">C</td><td class="sh-C">C</td><td class="sh-I">I</td><td class="sh-I">I</td><td class="sh-I">I</td><td class="sh-A">A</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <!-- KPI TRACKER -->
+      <div class="tmpl-panel" id="tmpl-kpi">
+        <div class="sheet-bar"><div class="sheet-bar-l">Weekly KPI Tracker <span>Update every Monday · Track → Act → Improve</span></div><div class="sheet-bar-r"><button class="btn btn-ghost btn-xs" onclick="resetTmpl('kpi')">Reset</button><button class="btn btn-blue btn-xs" onclick="printTmpl('kpi','Weekly KPI Tracker')">🖨 Print / Save PDF</button></div></div>
+        <div id="sheet-kpi"><table class="sht" width="100%">
+          <thead><tr><th style="min-width:200px">KPI</th><th style="min-width:200px">Description</th><th style="min-width:110px">This Week</th><th style="min-width:90px">Target</th><th style="min-width:200px">Notes</th></tr></thead>
+          <tbody>
+            <tr><td colspan="5" class="kpi-cat">CLIENT &amp; PROGRAM METRICS</td></tr>
+            <tr><td class="shl">Active Clients</td><td class="shv"># clients currently enrolled</td><td class="kpi-on" contenteditable="true">40</td><td class="shl sh-center">Higher is better</td><td class="shv" contenteditable="true">At capacity. Monitor weekly.</td></tr>
+            <tr><td class="shl">Admissions This Week</td><td class="shv">New client intakes</td><td class="shv sh-center" contenteditable="true">6</td><td class="shl sh-center">Track volume</td><td class="shv" contenteditable="true"></td></tr>
+            <tr><td class="shl">Client Retention Rate</td><td class="shv">% remaining from prior month</td><td class="kpi-on" contenteditable="true">95%</td><td class="shl sh-center">≥90%</td><td class="shv" contenteditable="true">Target met.</td></tr>
+            <tr><td class="shl">Discharges This Week</td><td class="shv">Clients completing program</td><td class="shv sh-center" contenteditable="true">5</td><td class="shl sh-center">Monitor flow</td><td class="shv" contenteditable="true"></td></tr>
+            <tr><td colspan="5" class="kpi-cat">COMPLIANCE &amp; DOCUMENTATION</td></tr>
+            <tr><td class="shl">EMR Documentation Rate</td><td class="shv">% cases with complete notes</td><td class="kpi-on" contenteditable="true">100%</td><td class="shl sh-center">100%</td><td class="shv" contenteditable="true">Maintained. Zero backlog.</td></tr>
+            <tr><td class="shl">Audit Findings (YTD)</td><td class="shv">Total compliance findings</td><td class="kpi-on" contenteditable="true">0</td><td class="shl sh-center">0</td><td class="shv" contenteditable="true">Clean record maintained.</td></tr>
+            <tr><td class="shl">Documentation Backlog</td><td class="shv">Cases with outstanding notes</td><td class="kpi-on" contenteditable="true">0</td><td class="shl sh-center">0</td><td class="shv" contenteditable="true">Clear weekly.</td></tr>
+            <tr><td colspan="5" class="kpi-cat">SCHEDULING &amp; OPERATIONS</td></tr>
+            <tr><td class="shl">Meetings Coordinated</td><td class="shv">Weekly multidisciplinary sessions</td><td class="kpi-on" contenteditable="true">15</td><td class="shl sh-center">15+</td><td class="shv" contenteditable="true">Target met.</td></tr>
+            <tr><td class="shl">Scheduling Conflicts</td><td class="shv">Conflicts identified this week</td><td class="kpi-on" contenteditable="true">0</td><td class="shl sh-center">&lt;3</td><td class="shv" contenteditable="true">Zero conflicts this week.</td></tr>
+            <tr><td class="shl">Scheduling Efficiency</td><td class="shv">% meetings starting on time</td><td class="kpi-on" contenteditable="true">88%</td><td class="shl sh-center">≥85%</td><td class="shv" contenteditable="true">Above target.</td></tr>
+            <tr><td class="shl">Staff Utilization Rate</td><td class="shv">Avg staff hours vs available</td><td class="kpi-on" contenteditable="true">87%</td><td class="shl sh-center">≥80%</td><td class="shv" contenteditable="true">Strong week.</td></tr>
+            <tr><td colspan="5" class="kpi-cat">REPORTING &amp; STAKEHOLDERS</td></tr>
+            <tr><td class="shl">Reports Submitted on Time</td><td class="shv">Weekly/monthly reports delivered</td><td class="kpi-on" contenteditable="true">2 / 2</td><td class="shl sh-center">All</td><td class="shv" contenteditable="true">100% on-time delivery.</td></tr>
+            <tr><td class="shl">Stakeholder Updates Sent</td><td class="shv">Communications distributed</td><td class="kpi-on" contenteditable="true">3</td><td class="shl sh-center">≥3</td><td class="shv" contenteditable="true">Families + providers + leadership.</td></tr>
+            <tr><td class="shl">Open Action Items</td><td class="shv">Outstanding tasks from meetings</td><td class="kpi-warn" contenteditable="true">4</td><td class="shl sh-center">&lt;10</td><td class="shv" contenteditable="true">Review weekly. Target met.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+
+      <!-- DMAIC TEMPLATE -->
+      <div class="tmpl-panel" id="tmpl-dmaic-tmpl">
+        <div class="sheet-bar"><div class="sheet-bar-l">DMAIC Project Template <span>Six Sigma Black Belt (AIGPE) · Fill in each phase</span></div><div class="sheet-bar-r"><button class="btn btn-ghost btn-xs" onclick="resetTmpl('dmaic-tmpl')">Reset</button><button class="btn btn-blue btn-xs" onclick="printTmpl('dmaic-tmpl','DMAIC Template')">🖨 Print / Save PDF</button></div></div>
+        <div id="sheet-dmaic-tmpl"><table class="sht" width="100%">
+          <tr><td colspan="2" class="shl" style="background:var(--bg2);font-weight:600;font-size:.82rem">Project Name</td><td colspan="2"><div class="shv" contenteditable="true" data-ph="Enter project name"></div></td></tr>
+          <tr><td class="shl">Project Lead</td><td><div class="shv">Kaylee Gassen</div></td><td class="shl">Start Date</td><td><div class="shv" contenteditable="true" data-ph="MM/DD/YYYY"></div></td></tr>
+          <tr><td class="shl">Sponsor</td><td><div class="shv" contenteditable="true" data-ph="Enter sponsor name"></div></td><td class="shl">Target End Date</td><td><div class="shv" contenteditable="true" data-ph="MM/DD/YYYY"></div></td></tr>
+          <tr><td colspan="4" class="phase-hdr">D — DEFINE</td></tr>
+          <tr><td colspan="2" class="shl">Problem Statement</td><td colspan="2"><div class="shv" contenteditable="true" data-ph="What is the specific problem? Use data. What does it cost the organization?" style="min-height:50px"></div></td></tr>
+          <tr><td colspan="2" class="shl">Goal Statement</td><td colspan="2"><div class="shv" contenteditable="true" data-ph="What measurable improvement is targeted? By how much? By when?" style="min-height:50px"></div></td></tr>
+          <tr><td colspan="2" class="shl">Scope (In)</td><td colspan="2"><div class="shv" contenteditable="true" data-ph="What IS included in this project?"></div></td></tr>
+          <tr><td colspan="2" class="shl">Scope (Out)</td><td colspan="2"><div class="shv" contenteditable="true" data-ph="What is explicitly NOT included?"></div></td></tr>
+          <tr><td colspan="2" class="shl">Project Team</td><td colspan="2"><div class="shv" contenteditable="true" data-ph="List team members and roles"></div></td></tr>
+          <tr><td colspan="4" class="phase-hdr" style="background:#059669">M — MEASURE</td></tr>
+          <tr><td colspan="2" class="shl">Baseline Metric</td><td colspan="2"><div class="shv" contenteditable="true" data-ph="Current performance level with specific numbers"></div></td></tr>
+          <tr><td colspan="2" class="shl">Target Metric</td><td colspan="2"><div class="shv" contenteditable="true" data-ph="Target performance level with specific improvement goal"></div></td></tr>
+          <tr><td colspan="2" class="shl">Data Collection Plan</td><td colspan="2"><div class="shv" contenteditable="true" data-ph="What data collected? How often? By whom?" style="min-height:44px"></div></td></tr>
+          <tr><td colspan="4" class="phase-hdr" style="background:#7c3aed">A — ANALYZE</td></tr>
+          <tr><td colspan="2" class="shl">Root Causes Identified</td><td colspan="2"><div class="shv" contenteditable="true" data-ph="List validated root causes (People / Process / Systems / Data)" style="min-height:50px"></div></td></tr>
+          <tr><td colspan="2" class="shl">Key Findings</td><td colspan="2"><div class="shv" contenteditable="true" data-ph="Summarize what the data reveals about root causes"></div></td></tr>
+          <tr><td colspan="4" class="phase-hdr" style="background:#d97706">I — IMPROVE</td></tr>
+          <tr><td colspan="2" class="shl">Solution Selected</td><td colspan="2"><div class="shv" contenteditable="true" data-ph="Which solution was selected? Why?" style="min-height:44px"></div></td></tr>
+          <tr><td colspan="2" class="shl">Implementation Plan</td><td colspan="2"><div class="shv" contenteditable="true" data-ph="Step-by-step: who, what, when, resources needed" style="min-height:60px"></div></td></tr>
+          <tr><td colspan="2" class="shl">Pilot Results</td><td colspan="2"><div class="shv" contenteditable="true" data-ph="What were the pilot/test results?"></div></td></tr>
+          <tr><td colspan="4" class="phase-hdr" style="background:#0891b2">C — CONTROL</td></tr>
+          <tr><td colspan="2" class="shl">Control Plan</td><td colspan="2"><div class="shv" contenteditable="true" data-ph="How will improvements be sustained long-term?" style="min-height:44px"></div></td></tr>
+          <tr><td colspan="2" class="shl">Monitoring Plan</td><td colspan="2"><div class="shv" contenteditable="true" data-ph="Which KPIs tracked? How often? By whom?"></div></td></tr>
+          <tr><td colspan="2" class="shl">Actual Result</td><td colspan="2"><div class="shv" contenteditable="true" data-ph="Final before vs. after metrics. Quantify the improvement."></div></td></tr>
+          <tr><td colspan="2" class="shl">% Improvement</td><td colspan="2"><div class="shv" contenteditable="true" data-ph="e.g. 15% reduction in scheduling conflicts"></div></td></tr>
+        </table></div>
+      </div>
+
+    </div><!-- end templates panel -->
 
   </div>
 </section>
 
-<!-- ─── SKILLS ─── -->
+<!-- SKILLS -->
 <section id="skills">
   <div class="wrap">
     <div class="f"><span class="lbl">Tools &amp; Analytics</span><h2>Capabilities by category.</h2><div class="rule"></div></div>
     <div class="sg f">
-      <div class="sc"><div class="sce">Category 01</div><div class="scn">Analytics &amp; Reporting</div>
-        <div class="sis">
-          <div class="si"><span class="sid" style="background:var(--blue)"></span>Power BI — Dashboard development &amp; DAX</div>
-          <div class="si"><span class="sid" style="background:var(--blue)"></span>Excel — Advanced reporting &amp; data modeling</div>
-          <div class="si"><span class="sid" style="background:var(--blue)"></span>KPI Development &amp; Executive Reporting</div>
-          <div class="si"><span class="sid" style="background:var(--blue)"></span>AI Tools — Claude API, prompt engineering</div>
-        </div>
-      </div>
-      <div class="sc"><div class="sce">Category 02</div><div class="scn">Operations &amp; Compliance</div>
-        <div class="sis">
-          <div class="si"><span class="sid" style="background:var(--grn)"></span>Lean Six Sigma Black Belt — AIGPE Certified</div>
-          <div class="si"><span class="sid" style="background:var(--grn)"></span>Process Improvement — DMAIC Methodology</div>
-          <div class="si"><span class="sid" style="background:var(--grn)"></span>HIPAA &amp; Regulatory Compliance</div>
-          <div class="si"><span class="sid" style="background:var(--grn)"></span>EMR/EHR Systems &amp; Audit Readiness</div>
-          <div class="si"><span class="sid" style="background:var(--grn)"></span>Workflow Optimization &amp; Change Management</div>
-        </div>
-      </div>
-      <div class="sc"><div class="sce">Category 03</div><div class="scn">Project Management</div>
-        <div class="sis">
-          <div class="si"><span class="sid" style="background:var(--amb)"></span>Scheduling Coordination &amp; Dependency Mgmt</div>
-          <div class="si"><span class="sid" style="background:var(--amb)"></span>Risk Tracking &amp; Mitigation</div>
-          <div class="si"><span class="sid" style="background:var(--amb)"></span>Milestone Tracking &amp; Scope Management</div>
-          <div class="si"><span class="sid" style="background:var(--amb)"></span>Cross-functional Team Leadership (9+)</div>
-          <div class="si"><span class="sid" style="background:var(--amb)"></span>Stakeholder Communication</div>
-        </div>
-      </div>
+      <div class="sc"><div class="sce">Category 01</div><div class="scn">Analytics &amp; Reporting</div><div class="sis">
+        <div class="si"><span class="sid" style="background:var(--blue)"></span>Power BI — Dashboard development &amp; DAX</div>
+        <div class="si"><span class="sid" style="background:var(--blue)"></span>Excel — Advanced reporting &amp; data modeling</div>
+        <div class="si"><span class="sid" style="background:var(--blue)"></span>KPI Development &amp; Executive Reporting</div>
+        <div class="si"><span class="sid" style="background:var(--blue)"></span>AI Tools — Claude API, prompt engineering</div>
+      </div></div>
+      <div class="sc"><div class="sce">Category 02</div><div class="scn">Operations &amp; Compliance</div><div class="sis">
+        <div class="si"><span class="sid" style="background:var(--grn)"></span>Lean Six Sigma Black Belt — AIGPE Certified</div>
+        <div class="si"><span class="sid" style="background:var(--grn)"></span>Process Improvement — DMAIC Methodology</div>
+        <div class="si"><span class="sid" style="background:var(--grn)"></span>HIPAA &amp; Regulatory Compliance</div>
+        <div class="si"><span class="sid" style="background:var(--grn)"></span>EMR/EHR Systems &amp; Audit Readiness</div>
+        <div class="si"><span class="sid" style="background:var(--grn)"></span>Workflow Optimization &amp; Change Management</div>
+      </div></div>
+      <div class="sc"><div class="sce">Category 03</div><div class="scn">Project Management</div><div class="sis">
+        <div class="si"><span class="sid" style="background:var(--amb)"></span>Scheduling Coordination &amp; Dependency Mgmt</div>
+        <div class="si"><span class="sid" style="background:var(--amb)"></span>Risk Tracking &amp; Mitigation</div>
+        <div class="si"><span class="sid" style="background:var(--amb)"></span>Milestone Tracking &amp; Scope Management</div>
+        <div class="si"><span class="sid" style="background:var(--amb)"></span>Cross-functional Team Leadership (9+)</div>
+        <div class="si"><span class="sid" style="background:var(--amb)"></span>Stakeholder Communication</div>
+      </div></div>
     </div>
   </div>
 </section>
 
-<!-- ─── EDUCATION ─── -->
+<!-- EDUCATION -->
 <section id="education">
   <div class="wrap">
     <div class="f"><span class="lbl">Education &amp; Certifications</span><div class="rule"></div></div>
@@ -972,7 +893,7 @@ We discussed the accreditation review coming up next month..."></textarea>
   </div>
 </section>
 
-<!-- ─── CONTACT ─── -->
+<!-- CONTACT -->
 <section id="contact">
   <div class="wrap">
     <div class="ctg">
@@ -981,8 +902,8 @@ We discussed the accreditation review coming up next month..."></textarea>
         <div class="cth">Interested in healthcare operations, PMO coordination, process improvement, or analytics?</div>
         <p class="ctp">Immediately available for full-time roles. Effective in structured PMO teams and equally comfortable building programs from scratch.</p>
         <div class="clinks">
-          <div class="clr"><span class="clk">Email</span><span class="clv b"><a href="mailto:kayleegassen@gmail.com">kayleegassen@gmail.com</a></span></div>
-          <div class="clr"><span class="clk">LinkedIn</span><span class="clv b"><a href="https://linkedin.com/in/kaylee-gassen-999464160" target="_blank" rel="noopener">linkedin.com/in/kaylee-gassen-999464160</a></span></div>
+          <div class="clr"><span class="clk">Email</span><span class="clv"><a href="mailto:kayleegassen@gmail.com">kayleegassen@gmail.com</a></span></div>
+          <div class="clr"><span class="clk">LinkedIn</span><span class="clv"><a href="https://linkedin.com/in/kaylee-gassen-999464160" target="_blank" rel="noopener">linkedin.com/in/kaylee-gassen-999464160</a></span></div>
           <div class="clr"><span class="clk">Location</span><span class="clv">Denver, CO · Remote &amp; Hybrid OK</span></div>
           <div class="clr"><span class="clk">Status</span><span class="clv g">Actively seeking mid-level to senior PM roles</span></div>
         </div>
@@ -990,308 +911,237 @@ We discussed the accreditation review coming up next month..."></textarea>
       </div>
       <div class="f">
         <div class="ob">
-          <div class="obt">
-            <div class="obs">Actively seeking new opportunities</div>
-            <h3>Available immediately for the right role</h3>
-            <p>5+ years in healthcare program operations. Six Sigma Black Belt. Zero compliance findings. Live KPI dashboard, AI meeting tool, DMAIC case study, and PM templates all built and available above.</p>
-          </div>
-          <div class="obr">
-            <span class="obrp">Program Manager</span><span class="obrp">Project Manager</span><span class="obrp">Healthcare Operations</span><span class="obrp">PMO Analyst</span><span class="obrp">Operations Manager</span>
-          </div>
-          <div class="obc">
-            <a href="mailto:kayleegassen@gmail.com" class="btn btn-blue">Get in Touch</a>
-            <a href="Kaylee_Gassen_Resume.docx" download class="btn btn-grn"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2v8M5 7l3 3 3-3M2 13h12"/></svg>Resume</a>
-          </div>
+          <div class="obt"><div class="obs">Actively seeking new opportunities</div><h3>Available immediately for the right role</h3><p>5+ years in healthcare program operations. Six Sigma Black Belt. Zero compliance findings. KPI dashboard, AI tool, DMAIC case study, and PM templates all built into this page.</p></div>
+          <div class="obr"><span class="obrp">Program Manager</span><span class="obrp">Project Manager</span><span class="obrp">Healthcare Operations</span><span class="obrp">PMO Analyst</span><span class="obrp">Operations Manager</span></div>
+          <div class="obc"><a href="mailto:kayleegassen@gmail.com" class="btn btn-blue">Get in Touch</a><a href="Kaylee_Gassen_Resume.docx" download class="btn btn-grn"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M8 2v8M5 7l3 3 3-3M2 13h12"/></svg>Resume</a></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="wrap">
-    <div class="fi">
-      <span class="fn">Kaylee Gassen — Program Manager · Healthcare Operations</span>
-      <span class="fd">Denver, CO · kayleegassen@gmail.com</span>
-    </div>
-  </div>
-</footer>
+<footer><div class="wrap"><div class="fi"><span class="fn">Kaylee Gassen — Program Manager · Healthcare Operations</span><span class="fd">Denver, CO · kayleegassen@gmail.com</span></div></div></footer>
 
-<!-- ─── SCRIPTS ─── -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script>
-/* ── TAB SYSTEM ── */
+/* ── MAIN TAB SYSTEM ── */
 function switchTab(name) {
   document.querySelectorAll('.tpanel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.ttab').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + name).classList.add('active');
   document.querySelector(`[data-tab="${name}"]`).classList.add('active');
-  if (name === 'dashboard' && !window._chartsReady) {
-    setTimeout(initCharts, 50);
-    window._chartsReady = true;
-  }
+  if (name === 'dash' && !window._charts) { initCharts(); window._charts = true; }
 }
 
-/* ── DMAIC PHASES ── */
-const phaseColors = {D:'#3b82f6',M:'#10b981',A:'#8b5cf6',I:'#f59e0b',C:'#06b6d4'};
-const phaseNames = {D:'Define',M:'Measure',A:'Analyze',I:'Improve',C:'Control'};
-let activePhase = 'D';
+/* ── DMAIC PHASE SWITCHING ── */
+const phaseC = {D:'#3b82f6',M:'#059669',A:'#7c3aed',I:'#d97706',C:'#0891b2'};
 function switchPhase(p) {
-  document.querySelectorAll('.dmaic-content').forEach(c => c.classList.remove('dc-active'));
-  document.querySelectorAll('.dmaic-phase').forEach((el, i) => {
-    const letters = ['D','M','A','I','C'];
-    const letter = letters[i];
-    el.style.background = letter === p ? '#1e3a5f' : '';
-    el.style.borderColor = letter === p ? phaseColors[p] : 'var(--b0)';
-    el.querySelector('.dp-letter').style.color = letter === p ? phaseColors[p] : 'var(--dim)';
-    const nameEl = el.querySelector('.dp-name');
-    if (nameEl) nameEl.style.color = letter === p ? phaseColors[p] : 'var(--dim)';
+  ['D','M','A','I','C'].forEach(l => {
+    const el = document.getElementById('ph-' + l);
+    el.style.background = l === p ? '#1e3a5f' : '';
+    el.style.borderColor = l === p ? phaseC[p] : 'var(--b0)';
+    el.querySelector('.dph-l').style.color = l === p ? phaseC[p] : 'var(--dim)';
+    el.querySelector('.dph-n').style.color = l === p ? phaseC[p] : 'var(--dim)';
   });
-  document.getElementById('dc-' + p).classList.add('dc-active');
-  activePhase = p;
+  document.querySelectorAll('.d-content').forEach(c => c.classList.remove('on'));
+  document.getElementById('dc-' + p).classList.add('on');
 }
 
 /* ── CHARTS ── */
 const G = 'rgba(255,255,255,0.045)', T = '#3d5270';
-const base = {responsive:true, maintainAspectRatio:false, animation:{duration:600}, plugins:{legend:{display:false}}};
+const base = {responsive:true,maintainAspectRatio:false,animation:{duration:600},plugins:{legend:{display:false}}};
+const months = ['Jan 22','Feb 22','Mar 22','Apr 22','May 22','Jun 22','Jul 22','Aug 22','Sep 22','Oct 22','Nov 22','Dec 22','Jan 23','Feb 23','Mar 23','Apr 23','May 23','Jun 23','Jul 23','Aug 23','Sep 23','Oct 23','Nov 23','Dec 23'];
 
 function initCharts() {
-  const months = ['Jan 22','Feb 22','Mar 22','Apr 22','May 22','Jun 22','Jul 22','Aug 22','Sep 22','Oct 22','Nov 22','Dec 22','Jan 23','Feb 23','Mar 23','Apr 23','May 23','Jun 23','Jul 23','Aug 23','Sep 23','Oct 23','Nov 23','Dec 23'];
+  new Chart(document.getElementById('cAdm'),{type:'bar',data:{labels:months,datasets:[
+    {label:'Recovery',data:[28,29,30,29,31,32,33,31,34,33,35,36,35,37,36,38,38,39,40,39,40,41,40,40],backgroundColor:'rgba(59,130,246,.7)',borderRadius:2,borderSkipped:false},
+    {label:'Youth',data:[null,null,null,null,null,null,null,null,null,null,null,null,14,15,16,17,18,19,20,20,21,22,22,23],backgroundColor:'rgba(245,158,11,.7)',borderRadius:2,borderSkipped:false}
+  ]},options:{...base,scales:{x:{stacked:true,ticks:{color:T,font:{size:9},maxRotation:0,autoSkip:true,maxTicksLimit:12},grid:{color:G},border:{color:G}},y:{stacked:true,beginAtZero:true,ticks:{color:T,font:{size:9}},grid:{color:G},border:{color:G}}}}});
 
-  new Chart(document.getElementById('chartAdmissions'), {
-    type:'bar',
-    data:{labels:months,datasets:[
-      {label:'Recovery',data:[28,29,30,29,31,32,33,31,34,33,35,36,35,37,36,38,38,39,40,39,40,41,40,40],backgroundColor:'rgba(59,130,246,.7)',borderRadius:2,borderSkipped:false},
-      {label:'Youth',data:[null,null,null,null,null,null,null,null,null,null,null,null,14,15,16,17,18,19,20,20,21,22,22,23],backgroundColor:'rgba(245,158,11,.7)',borderRadius:2,borderSkipped:false}
-    ]},
-    options:{...base,scales:{x:{stacked:true,ticks:{color:T,font:{size:9},maxRotation:0,autoSkip:true,maxTicksLimit:12},grid:{color:G},border:{color:G}},y:{stacked:true,beginAtZero:true,ticks:{color:T,font:{size:9}},grid:{color:G},border:{color:G}}}}
-  });
+  new Chart(document.getElementById('cDonut'),{type:'doughnut',data:{labels:['Co-occurring Disorders','Substance Use Recovery','Mental Health Focus'],datasets:[{data:[42,35,23],backgroundColor:['#3b82f6','#10b981','#8b5cf6'],borderWidth:0,hoverOffset:3}]},options:{...base,cutout:'62%',plugins:{legend:{display:true,position:'bottom',labels:{color:T,font:{size:9},padding:8,boxWidth:10}}}}});
 
-  new Chart(document.getElementById('chartDonut'), {
-    type:'doughnut',
-    data:{labels:['Co-occurring Disorders','Substance Use Recovery','Mental Health Focus'],datasets:[{data:[42,35,23],backgroundColor:['#3b82f6','#10b981','#8b5cf6'],borderWidth:0,hoverOffset:3}]},
-    options:{...base,cutout:'62%',plugins:{legend:{display:true,position:'bottom',labels:{color:T,font:{size:9},padding:8,boxWidth:10}}}}
-  });
+  new Chart(document.getElementById('cTrend'),{type:'line',data:{labels:months,datasets:[
+    {label:'Engagement',data:[72,73,74,75,76,77,78,78,79,80,81,82,82,83,84,84,85,85,86,86,87,88,88,89],borderColor:'#f59e0b',backgroundColor:'rgba(245,158,11,.06)',borderWidth:2,pointRadius:1.5,pointBackgroundColor:'#f59e0b',fill:true,tension:0.4},
+    {label:'Scheduling',data:[71,73,75,76,78,79,80,80,82,83,84,85,85,86,86,87,87,88,88,88,89,89,90,90],borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,.06)',borderWidth:2,pointRadius:1.5,pointBackgroundColor:'#3b82f6',fill:true,tension:0.4}
+  ]},options:{...base,scales:{x:{ticks:{color:T,font:{size:9},maxRotation:0,autoSkip:true,maxTicksLimit:12},grid:{color:G},border:{color:G}},y:{min:60,max:100,ticks:{color:T,font:{size:9}},grid:{color:G},border:{color:G}}}}});
 
-  new Chart(document.getElementById('chartTrend'), {
-    type:'line',
-    data:{labels:months,datasets:[
-      {label:'Engagement',data:[72,73,74,75,76,77,78,78,79,80,81,82,82,83,84,84,85,85,86,86,87,88,88,89],borderColor:'#f59e0b',backgroundColor:'rgba(245,158,11,.06)',borderWidth:2,pointRadius:1.5,pointBackgroundColor:'#f59e0b',fill:true,tension:0.4},
-      {label:'Scheduling',data:[71,73,75,76,78,79,80,80,82,83,84,85,85,86,86,87,87,88,88,88,89,89,90,90],borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,.06)',borderWidth:2,pointRadius:1.5,pointBackgroundColor:'#3b82f6',fill:true,tension:0.4}
-    ]},
-    options:{...base,scales:{x:{ticks:{color:T,font:{size:9},maxRotation:0,autoSkip:true,maxTicksLimit:12},grid:{color:G},border:{color:G}},y:{min:60,max:100,ticks:{color:T,font:{size:9}},grid:{color:G},border:{color:G}}}}
-  });
+  new Chart(document.getElementById('cUtil'),{type:'bar',data:{labels:['Clinical','Operations','Admin','External'],datasets:[{data:[87,81,92,74],backgroundColor:['#3b82f6','#10b981','#8b5cf6','#f59e0b'],borderRadius:2,borderSkipped:false}]},options:{...base,indexAxis:'y',scales:{x:{beginAtZero:true,max:100,ticks:{color:T,font:{size:9},callback:v=>v+'%'},grid:{color:G},border:{color:G}},y:{ticks:{color:T,font:{size:9}},grid:{display:false},border:{color:G}}}}});
 
-  new Chart(document.getElementById('chartUtil'), {
-    type:'bar',
-    data:{labels:['Clinical','Operations','Admin','External'],datasets:[{data:[87,81,92,74],backgroundColor:['#3b82f6','#10b981','#8b5cf6','#f59e0b'],borderRadius:2,borderSkipped:false}]},
-    options:{...base,indexAxis:'y',scales:{x:{beginAtZero:true,max:100,ticks:{color:T,font:{size:9},callback:v=>v+'%'},grid:{color:G},border:{color:G}},y:{ticks:{color:T,font:{size:9}},grid:{display:false},border:{color:G}}}}
-  });
-
-  new Chart(document.getElementById('chartRetention'), {
-    type:'line',
-    data:{labels:['Q1 22','Q2 22','Q3 22','Q4 22','Q1 23','Q2 23','Q3 23','Q4 23'],datasets:[{data:[3,6,12,20,22,26,29,30],borderColor:'#8b5cf6',backgroundColor:'rgba(139,92,246,.08)',borderWidth:2.5,pointRadius:4,pointBackgroundColor:'#8b5cf6',fill:true,tension:0.3}]},
-    options:{...base,scales:{x:{ticks:{color:T,font:{size:10}},grid:{color:G},border:{color:G}},y:{beginAtZero:true,ticks:{color:T,font:{size:9},callback:v=>'+'+v+'d'},grid:{color:G},border:{color:G}}},plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` +${c.raw} days vs baseline`}}}}
-  });
+  new Chart(document.getElementById('cRet'),{type:'line',data:{labels:['Q1 22','Q2 22','Q3 22','Q4 22','Q1 23','Q2 23','Q3 23','Q4 23'],datasets:[{data:[3,6,12,20,22,26,29,30],borderColor:'#8b5cf6',backgroundColor:'rgba(139,92,246,.08)',borderWidth:2.5,pointRadius:4,pointBackgroundColor:'#8b5cf6',fill:true,tension:0.3}]},options:{...base,scales:{x:{ticks:{color:T,font:{size:10}},grid:{color:G},border:{color:G}},y:{beginAtZero:true,ticks:{color:T,font:{size:9},callback:v=>'+'+v+'d'},grid:{color:G},border:{color:G}}},plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` +${c.raw} days`}}}}});
 }
+window.addEventListener('load', () => { initCharts(); window._charts = true; });
 
-// Init charts immediately for the first visible tab
-window.addEventListener('load', () => {
-  initCharts();
-  window._chartsReady = true;
-});
-
-/* ── AI MEETING NOTES TOOL ── */
-const DEMO_NOTES = `Meeting: Weekly Team Check-in
+/* ── AI MEETING NOTES ── */
+const DEMO = `Meeting: Weekly Team Check-in
 Date: ${new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}
 Attendees: Kaylee Gassen, Sarah Johnson, Dr. Lisa Chen, Mike Torres, Amanda Rivera
 
-We reviewed the upcoming accreditation survey scheduled for July 15th. Dr. Chen will finalize the compliance documentation packet by Friday. Sarah needs to update all EMR records for active cases before Thursday end of day. Mike agreed to coordinate with the two external service providers about the updated care protocol by next Monday.
+We reviewed the upcoming accreditation survey scheduled for next month. Dr. Chen will finalize the compliance documentation packet by Friday. Sarah needs to update all EMR records for active cases before Thursday end of day. Mike agreed to coordinate with the two external service providers about the updated care protocol by next Monday.
 
 The team decided to move the weekly meeting from Tuesday to Wednesday starting next week. Kaylee will send updated calendar invites to all staff by end of day today. Amanda should prepare the new client intake checklist and circulate for team feedback by Thursday.
 
-We discussed the Q3 budget review. Mike will submit the vehicle maintenance request to operations this week. The team approved moving forward with the new documentation workflow. Sarah and Dr. Chen will co-lead the staff training session on the updated protocol — schedule for the week of June 16th.
+We discussed the Q3 budget review. Mike will submit the vehicle maintenance request to operations this week. The team approved moving forward with the new documentation workflow. Sarah and Dr. Chen will co-lead the staff training session — schedule for the week of June 16th.
 
-Follow up items: Confirm vendor meeting for July 8th with Mike. Amanda to complete onboarding paperwork for two new hires by Friday.`;
+Follow up: Confirm vendor meeting for July 8th with Mike. Amanda to complete onboarding paperwork for two new hires by Friday.`;
 
-function loadDemo() {
-  document.getElementById('ai-notes').value = DEMO_NOTES;
-  document.getElementById('ai-meeting-type').value = 'Weekly Team Meeting';
-}
-
+function loadDemo() { document.getElementById('ai-notes').value = DEMO; document.getElementById('ai-type').value = 'Weekly Team Meeting'; }
 function clearAI() {
   document.getElementById('ai-notes').value = '';
-  document.getElementById('ai-meeting-type').value = '';
-  document.getElementById('ai-output').innerHTML = '<div class="ai-placeholder"><div class="ai-placeholder-icon">🤖</div><div>Paste meeting notes and click<br><strong style="color:var(--txt)">Process Notes</strong> to extract action items</div></div>';
+  document.getElementById('ai-type').value = '';
+  document.getElementById('ai-out').innerHTML = '<div class="ai-ph"><span style="font-size:2rem">🤖</span>Paste meeting notes and click<br><strong style="color:var(--txt)">Process Notes</strong></div>';
   document.getElementById('copy-btn').style.display = 'none';
 }
 
-function extractOwner(sentence) {
-  const patterns = [
-    /^(Dr\.\s+[A-Z][a-z]+)\s+(will|needs to|should|to|agreed to)/,
-    /^([A-Z][a-z]+\s+[A-Z][a-z]+)\s+(will|needs to|should|to|agreed to)/,
-    /^([A-Z][a-z]+)\s+(will|needs to|should|agreed to)/,
-    /([A-Z][a-z]+)\s+(?:and\s+[A-Z][a-z]+\s+)?will\s+(?:co-lead|co-author|co-develop)/
-  ];
-  for (const p of patterns) {
-    const m = sentence.match(p);
-    if (m) return m[1].trim();
-  }
+function extractOwner(s) {
+  const pats = [/^(Dr\.\s+[A-Z][a-z]+)/,/^([A-Z][a-z]+\s+[A-Z][a-z]+)\s+(will|needs to|agreed to|should)/,/^([A-Z][a-z]+)\s+(will|needs to|agreed to|should)/];
+  for (const p of pats) { const m = s.match(p); if (m) return m[1].trim(); }
   return null;
 }
-
-function extractDue(sentence) {
-  const patterns = [
-    /by\s+(Friday|Monday|Tuesday|Wednesday|Thursday|Saturday|Sunday)/i,
-    /by\s+(end of day|EOD|COB)/i,
-    /before\s+(Thursday|Friday|Monday|Tuesday|Wednesday)/i,
-    /by\s+(next\s+\w+day)/i,
-    /this\s+week/i,
-    /next\s+week/i
-  ];
-  for (const p of patterns) {
-    const m = sentence.match(p);
-    if (m) return m[0].replace(/^by\s+/i, '').replace(/^before\s+/i, '');
-  }
+function extractDue(s) {
+  const pats = [/by\s+(Friday|Monday|Tuesday|Wednesday|Thursday)/i,/by\s+(end of day|EOD|COB)/i,/before\s+(Thursday|Friday|Monday)/i,/next\s+(Monday|week)/i,/this\s+week/i];
+  for (const p of pats) { const m = s.match(p); if (m) return m[0].replace(/^by\s+/i,'').replace(/^before\s+/i,''); }
   return 'TBD';
 }
-
 function getPriority(s) {
   const l = s.toLowerCase();
-  if (l.includes('urgent') || l.includes('asap') || l.includes('immediately') || l.includes('critical')) return 'High';
-  if (l.includes('when possible') || l.includes('eventually') || l.includes('consider')) return 'Low';
-  return 'Medium';
+  if (l.includes('urgent')||l.includes('asap')||l.includes('critical')) return ['High','chip-h'];
+  if (l.includes('when possible')||l.includes('eventually')) return ['Low','chip-l'];
+  return ['Medium','chip-m'];
 }
 
 function processNotes() {
   const notes = document.getElementById('ai-notes').value.trim();
-  if (!notes) { alert('Please paste some meeting notes first, or click "Load Demo Notes".'); return; }
-
-  const out = document.getElementById('ai-output');
-  out.innerHTML = '<div class="processing"><div class="spinner"></div><span>Processing your notes...</span></div>';
+  if (!notes) { alert('Please paste meeting notes or click "Load Demo" first.'); return; }
+  const out = document.getElementById('ai-out');
+  out.innerHTML = '<div class="proc"><div class="spinner"></div><span>Processing your notes...</span></div>';
   document.getElementById('copy-btn').style.display = 'none';
-
-  setTimeout(() => {
-    const meetingType = document.getElementById('ai-meeting-type').value || 'Meeting';
-    const result = parseNotes(notes, meetingType);
-    renderOutput(result);
-    document.getElementById('copy-btn').style.display = 'inline-block';
-  }, 1100);
+  setTimeout(() => { renderAI(parseNotes(notes)); document.getElementById('copy-btn').style.display = 'inline-block'; }, 1100);
 }
 
-function parseNotes(text, type) {
-  // Extract header fields
-  const titleMatch = text.match(/(?:Meeting|Subject|Topic):?\s*([^\n]+)/i);
-  const dateMatch = text.match(/[Dd]ate:?\s*([^\n]+)/);
-  const attendeeMatch = text.match(/[Aa]ttendees?:?\s*([^\n]+)/);
-
-  const title = titleMatch ? titleMatch[1].trim() : type;
-  const date = dateMatch ? dateMatch[1].trim() : new Date().toLocaleDateString();
-  const attendees = attendeeMatch
-    ? attendeeMatch[1].split(/[,&]/).map(s => s.trim()).filter(Boolean)
-    : [];
-
-  // Parse sentences
-  const sentences = text.replace(/\n+/g, ' ').split(/(?<=[.!?])\s+/).map(s => s.trim()).filter(s => s.length > 12);
-
-  const actionVerbs = ['will','needs to','should','agreed to','to send','to review','to update','to schedule','to prepare','to create','to submit','to contact','to confirm','to coordinate','to finalize','to complete','to develop'];
-  const decisionWords = ['decided','agreed','approved','resolved','confirmed','moved forward','will move','team approved','going forward'];
-
-  const actions = [];
-  const decisions = [];
-
+function parseNotes(text) {
+  const titleM = text.match(/(?:Meeting|Subject):?\s*([^\n]+)/i);
+  const dateM = text.match(/[Dd]ate:?\s*([^\n]+)/);
+  const attM = text.match(/[Aa]ttendees?:?\s*([^\n]+)/);
+  const title = titleM ? titleM[1].trim() : 'Meeting Notes';
+  const date = dateM ? dateM[1].trim() : new Date().toLocaleDateString();
+  const attendees = attM ? attM[1].split(/[,&]/).map(s=>s.trim()).filter(Boolean) : [];
+  const sentences = text.replace(/\n+/g,' ').split(/(?<=[.!?])\s+/).map(s=>s.trim()).filter(s=>s.length>15);
+  const actionV = ['will','needs to','should','agreed to','to send','to review','to update','to schedule','to prepare','to finalize','to coordinate','to submit','to confirm','to complete'];
+  const decW = ['decided','agreed','approved','resolved','confirmed','team approved','moving forward','will move'];
+  const actions = [], decisions = [];
   sentences.forEach(s => {
     const l = s.toLowerCase();
-    const isDecision = decisionWords.some(d => l.includes(d));
-    const isAction = !isDecision && actionVerbs.some(v => l.includes(v)) && s.length > 20;
-
-    if (isDecision) {
-      decisions.push(s.replace(/^[-•]\s*/, ''));
-    } else if (isAction) {
-      const owner = extractOwner(s) || 'Team';
-      const due = extractDue(s);
-      const priority = getPriority(s);
-      // Avoid duplicates and header lines
-      if (!s.match(/^(Meeting|Date|Attendees|Subject)/i)) {
-        actions.push({ text: s, owner, due, priority });
-      }
+    if (s.match(/^(Meeting|Date|Attendees)/i)) return;
+    if (decW.some(d=>l.includes(d))) decisions.push(s);
+    else if (actionV.some(v=>l.includes(v)) && s.length > 20) {
+      actions.push({text:s, owner:extractOwner(s)||'Team', due:extractDue(s), priority:getPriority(s)});
     }
   });
-
-  // Generate summary
-  const lines = text.split('\n').filter(l => l.trim() && !l.match(/^(Meeting|Date|Attendees):/i));
-  const summary = lines.slice(0, 3).join(' ').substring(0, 260) + '...';
-
-  return { title, date, attendees, actions, decisions, summary };
+  window._aiText = `MEETING: ${title}\nDATE: ${date}\n${attendees.length?'ATTENDEES: '+attendees.join(', ')+'\n':''}\nACTION ITEMS:\n${actions.map((a,i)=>`${i+1}. ${a.text}\n   Owner: ${a.owner} | Due: ${a.due} | Priority: ${a.priority[0]}`).join('\n')}${decisions.length?'\n\nDECISIONS:\n'+decisions.map((d,i)=>`${i+1}. ${d}`).join('\n'):''}`;
+  return {title,date,attendees,actions,decisions};
 }
 
-function renderOutput(r) {
-  let html = '';
-
-  // Summary header
-  html += `<div style="background:var(--bg2);border:1px solid var(--b0);border-radius:var(--r);padding:12px 15px;margin-bottom:14px">
-    <div style="font-size:.65rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:6px">Meeting Summary</div>
-    <div style="font-size:.88rem;font-weight:500;color:var(--txt);margin-bottom:3px">${r.title}</div>
-    <div style="font-size:.76rem;color:var(--dim)">${r.date}</div>
-  </div>`;
-
-  // Attendees
-  if (r.attendees.length > 0) {
-    html += `<div class="ai-section"><div class="ai-section-title">Attendees (${r.attendees.length})</div>`;
-    html += r.attendees.map(a => `<span class="ai-attendee">${a}</span>`).join('');
-    html += '</div>';
+function renderAI(r) {
+  let h = `<div class="ai-hdr"><div style="font-size:.88rem;font-weight:500;color:var(--txt);margin-bottom:3px">${r.title}</div><div style="font-size:.76rem;color:var(--dim)">${r.date}</div></div>`;
+  if (r.attendees.length) { h += `<div class="ai-sec"><div class="ai-sec-h">Attendees (${r.attendees.length})</div>${r.attendees.map(a=>`<span class="ai-att">${a}</span>`).join('')}</div>`; }
+  if (r.actions.length) {
+    h += `<div class="ai-sec"><div class="ai-sec-h">Action Items (${r.actions.length})</div>`;
+    r.actions.forEach(a => { h += `<div class="ai-item"><div class="ai-item-t">${a.text}</div><div class="ai-chips"><span class="chip chip-o">👤 ${a.owner}</span><span class="chip chip-d">📅 ${a.due}</span><span class="chip ${a.priority[1]}">${a.priority[0]}</span></div></div>`; });
+    h += '</div>';
   }
-
-  // Action items
-  if (r.actions.length > 0) {
-    html += `<div class="ai-section"><div class="ai-section-title">Action Items (${r.actions.length})</div>`;
-    r.actions.forEach(a => {
-      const pc = a.priority === 'High' ? 'ai-chip-p-high' : a.priority === 'Low' ? 'ai-chip-p-low' : 'ai-chip-p-med';
-      html += `<div class="ai-action-item">
-        <div class="ai-action-text">${a.text}</div>
-        <div class="ai-action-meta">
-          <span class="ai-chip ai-chip-owner">👤 ${a.owner}</span>
-          <span class="ai-chip ai-chip-due">📅 ${a.due}</span>
-          <span class="ai-chip ${pc}">${a.priority}</span>
-        </div>
-      </div>`;
-    });
-    html += '</div>';
-  }
-
-  // Decisions
-  if (r.decisions.length > 0) {
-    html += `<div class="ai-section"><div class="ai-section-title">Key Decisions (${r.decisions.length})</div>`;
-    r.decisions.forEach(d => { html += `<div class="ai-decision">✓ ${d}</div>`; });
-    html += '</div>';
-  }
-
-  if (r.actions.length === 0 && r.decisions.length === 0) {
-    html += `<div class="ai-action-item"><div class="ai-action-text">Notes processed. Try adding more detail — action items are identified by words like "will", "needs to", "agreed to", "should". Decisions are found by words like "decided", "approved", "confirmed".</div></div>`;
-  }
-
-  document.getElementById('ai-output').innerHTML = html;
-
-  // Store text for copy
-  window._aiOutputText = `MEETING: ${r.title}\nDATE: ${r.date}\n` +
-    (r.attendees.length ? `ATTENDEES: ${r.attendees.join(', ')}\n` : '') +
-    `\nACTION ITEMS:\n${r.actions.map((a,i) => `${i+1}. ${a.text}\n   Owner: ${a.owner} | Due: ${a.due} | Priority: ${a.priority}`).join('\n')}\n` +
-    (r.decisions.length ? `\nDECISIONS:\n${r.decisions.map((d,i)=>`${i+1}. ${d}`).join('\n')}` : '');
+  if (r.decisions.length) { h += `<div class="ai-sec"><div class="ai-sec-h">Key Decisions (${r.decisions.length})</div>${r.decisions.map(d=>`<div class="ai-dec">✓ ${d}</div>`).join('')}</div>`; }
+  if (!r.actions.length && !r.decisions.length) h += `<div class="ai-item"><div class="ai-item-t">Notes processed. Try adding more detail — action items need words like "will", "needs to", "agreed to". Decisions need "decided", "approved", "confirmed".</div></div>`;
+  document.getElementById('ai-out').innerHTML = h;
+}
+function copyOut() {
+  if (!window._aiText) return;
+  navigator.clipboard.writeText(window._aiText).then(() => { const b=document.getElementById('copy-btn'); b.textContent='Copied!'; setTimeout(()=>b.textContent='Copy All',2000); });
 }
 
-function copyOutput() {
-  if (!window._aiOutputText) return;
-  navigator.clipboard.writeText(window._aiOutputText).then(() => {
-    const btn = document.getElementById('copy-btn');
-    btn.textContent = 'Copied!';
-    setTimeout(() => btn.textContent = 'Copy All', 2000);
+/* ── TEMPLATE SUB-TABS ── */
+function switchTmpl(name) {
+  document.querySelectorAll('.tmpl-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tmpl-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('tmpl-' + name).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+/* ── RISK REGISTER SCORE CALC ── */
+function calcScore(cell) {
+  const row = cell.closest('tr');
+  const cells = row.querySelectorAll('[contenteditable]');
+  let l = 0, i = 0;
+  cells.forEach((c,idx) => {
+    const val = parseInt(c.textContent) || 0;
+    if (idx === 0) l = val; // likelihood is 3rd td (contenteditable)
+    if (idx === 1) i = val; // impact is 4th td
   });
+  // Find likelihood and impact specifically (3rd and 4th editable)
+  const editables = [...row.querySelectorAll('[contenteditable]')];
+  const tds = [...row.querySelectorAll('td')];
+  // Likelihood is td[3], Impact is td[4]
+  const lCell = tds[3], iCell = tds[4], scoreCell = tds[5], levelCell = tds[6];
+  if (!lCell || !iCell || !scoreCell || !levelCell) return;
+  const lv = parseInt(lCell.textContent) || 0;
+  const iv = parseInt(iCell.textContent) || 0;
+  const score = lv * iv;
+  scoreCell.textContent = score || '—';
+  scoreCell.className = 'sh-score ' + (score >= 10 ? 'sc-high' : score >= 5 ? 'sc-med' : score > 0 ? 'sc-low' : '');
+  if (score >= 10) { levelCell.className = 'risk-H'; levelCell.textContent = 'HIGH'; }
+  else if (score >= 5) { levelCell.className = 'risk-M'; levelCell.textContent = 'MEDIUM'; }
+  else if (score > 0) { levelCell.className = 'risk-L'; levelCell.textContent = 'LOW'; }
+  else { levelCell.className = 'shv'; levelCell.textContent = ''; }
+}
+
+/* ── PRINT TEMPLATE ── */
+function printTmpl(id, title) {
+  const el = document.getElementById('sheet-' + id);
+  if (!el) return;
+  const w = window.open('','_blank','width=900,height=700');
+  w.document.write(`<!DOCTYPE html><html><head><title>${title} — Kaylee Gassen</title><style>
+    body{font-family:'Segoe UI',system-ui,sans-serif;font-size:11px;color:#1e293b;padding:20px;background:#fff}
+    table{width:100%;border-collapse:collapse}
+    th{background:#1C3557;color:#fff;font-size:10px;font-weight:600;padding:7px 10px;text-align:left;border:1px solid #254570;letter-spacing:.06em;text-transform:uppercase}
+    td{border:1px solid #e2e8f0;padding:0;vertical-align:top}
+    .shl{background:#f1f5f9;color:#475569;font-size:10px;font-weight:500;padding:7px 10px;white-space:nowrap}
+    .shv{padding:7px 10px;color:#1e293b;min-height:28px;line-height:1.5}
+    .sh-section{background:#254570;color:#93c5fd;font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:6px 10px}
+    .sh-R{background:#dbeafe;color:#1d4ed8;font-weight:700;text-align:center;padding:7px}
+    .sh-A{background:#ede9fe;color:#6d28d9;font-weight:700;text-align:center;padding:7px}
+    .sh-C{background:#d1fae5;color:#065f46;font-weight:700;text-align:center;padding:7px}
+    .sh-I{background:#fef3c7;color:#92400e;font-weight:700;text-align:center;padding:7px}
+    .sh-center{text-align:center;padding:7px}
+    .risk-H{background:#fee2e2;color:#b91c1c;font-weight:700;text-align:center;padding:7px}
+    .risk-M{background:#fef3c7;color:#b45309;font-weight:700;text-align:center;padding:7px}
+    .risk-L{background:#d1fae5;color:#065f46;font-weight:700;text-align:center;padding:7px}
+    .sh-score{font-weight:700;text-align:center;padding:7px}
+    .sc-high{color:#b91c1c}.sc-med{color:#b45309}.sc-low{color:#065f46}
+    .kpi-cat{background:#e2e8f0;color:#1e293b;font-weight:600;padding:7px 10px;font-size:11px}
+    .kpi-on{background:#d1fae5;color:#065f46;font-weight:600;text-align:center;padding:7px}
+    .kpi-warn{background:#fef3c7;color:#92400e;font-weight:600;text-align:center;padding:7px}
+    .phase-hdr{color:#fff;font-weight:600;padding:8px 10px;font-size:11px}
+    h1{font-size:16px;color:#1C3557;margin-bottom:4px}
+    .sub{font-size:10px;color:#64748b;margin-bottom:16px}
+    @media print{body{padding:10px}}
+  </style></head><body>
+    <h1>${title}</h1>
+    <div class="sub">Kaylee Gassen · Program Manager · kayleegassen@gmail.com · Denver, CO</div>
+    ${el.innerHTML}
+    <script>window.onload=function(){window.print()}<\/script>
+  </body></html>`);
+  w.document.close();
+}
+
+/* ── RESET TEMPLATE ── */
+function resetTmpl(id) {
+  if (!confirm('Reset this template to its default values?')) return;
+  location.reload();
 }
 
 /* ── SCROLL FADE ── */
 const obs = new IntersectionObserver(es => {
   es.forEach(e => { if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)} });
-}, {threshold:.06, rootMargin:'0px 0px -20px 0px'});
+},{threshold:.06,rootMargin:'0px 0px -20px 0px'});
 document.querySelectorAll('.f').forEach(el => obs.observe(el));
 </script>
 </body>
